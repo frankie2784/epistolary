@@ -68,7 +68,7 @@ section video
     margin: 2rem 3rem 0;
     mix-blend-mode: screen;
     padding: 5px 15px;
-    /* text-align: center; */
+    text-align: left;
 }
 section h2
 {
