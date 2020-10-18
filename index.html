@@ -8,22 +8,26 @@
 <body>
     <section>
       <!-- <iframe src="https://www.youtube.com/embed/QbMB7mgnlro?playlist=QbMB7mgnlro&controls=0&loop=1&mute=1&autoplay=1"></iframe> -->
-
-        <video width=100% autoplay muted loop src="Town hall zoom.mp4" type="video/mp4">
+        <video width=100% playsinline autoplay muted loop src="Town hall zoom.mp4" type="video/mp4">
         </video>
+        <div class="overlay">
+            <h2>epistolary</h2>
+            <p>coming soon</p>
+        </div>
     </section>
-    <section>
+    <!-- <section>
         <div class="content">
            <h2>epistolary</h2>
            <p>coming soon</p>
         </div>
-    </section>
+    </section> -->
     <script type="text/javascript">
         let video = document.querySelector('video');
-        window.addEventListener('scroll', function(){
-            let value = 1 + window.scrollY/-800;
-            video.style.opacity = value;
-        })
+        video.style.opacity = 0.4;
+        // window.addEventListener('scroll', function(){
+        //     let value = 1 + window.scrollY/-800;
+        //     video.style.opacity = 0.4;
+        // })
     </script>
 </body>
 </html>

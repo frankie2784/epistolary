@@ -31,6 +31,36 @@ section video
     object-fit: cover;
     pointer-events: none;
 }
+/* .overlay {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+} */
+.overlay h2 {
+    background: white;
+    color: black;
+    font-weight: 600;
+    margin: 2rem 3rem 0;
+    mix-blend-mode: screen;
+    padding: 5px 15px;
+    text-align: center;
+}
+.overlay p {
+    background: black;
+    color: white;
+    font-weight: 300;
+    margin: 2rem 3rem 0;
+    mix-blend-mode: screen;
+    padding: 5px 15px;
+    text-align: center;
+}
 section h2
 {
     position: relative;
