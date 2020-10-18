@@ -31,7 +31,7 @@ section video
     object-fit: cover;
     pointer-events: none;
 }
-/* .overlay {
+.overlay {
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -42,7 +42,7 @@ section video
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-} */
+}
 .overlay h2 {
     background-color: white;
     color: black;
