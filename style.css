@@ -49,17 +49,26 @@ section video
     font-weight: 600;
     margin: 2rem 3rem 0;
     mix-blend-mode: screen;
-    padding: 5px 15px;
+    padding: 5px 20px;
     text-align: center;
+}
+.overlay h1 {
+    background-color: black;
+    color: white;
+    font-weight: 100;
+    margin: 0;
+    mix-blend-mode: screen;
+    padding: 5px 15px;
+    text-align: right;
 }
 .overlay p {
     background-color: black;
     color: white;
-    font-weight: 300;
+    font-weight: 100;
     margin: 2rem 3rem 0;
     mix-blend-mode: screen;
     padding: 5px 15px;
-    text-align: center;
+    /* text-align: center; */
 }
 section h2
 {
