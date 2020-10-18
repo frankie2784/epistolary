@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Fadeout Video Background On Scroll</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+      <!-- <iframe src="https://www.youtube.com/embed/QbMB7mgnlro?playlist=QbMB7mgnlro&controls=0&loop=1&mute=1&autoplay=1"></iframe> -->
+
+        <video width=100% autoplay muted loop src="Town hall zoom.m4v" type="video/mp4">
+        </video>
+    </section>
+    <section>
+        <div class="content">
+           <h2>Fadeout Video Background On Scroll</h2>
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus mattis rhoncus urna neque viverra justo nec. Aliquet risus feugiat in ante metus dictum at tempor commodo. Id velit ut tortor pretium viverra. Rhoncus aenean vel elit scelerisque mauris. Tincidunt nunc pulvinar sapien et. Magna eget est lorem ipsum dolor. Eget mi proin sed libero enim sed faucibus turpis. Urna molestie at elementum eu facilisis sed odio morbi quis. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas sed tempus urna. Consequat ac felis donec et odio pellentesque. Etiam erat velit scelerisque in dictum non consectetur a. Dis parturient montes nascetur ridiculus. Habitant morbi tristique senectus et. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Risus nullam eget felis eget nunc lobortis mattis. Mauris in aliquam sem fringilla ut morbi tincidunt.
+
+            Duis at tellus at urna condimentum mattis. Elementum facilisis leo vel fringilla est ullamcorper eget nulla. Orci nulla pellentesque dignissim enim sit amet venenatis. In fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Auctor neque vitae tempus quam pellentesque. In fermentum et sollicitudin ac orci. Eget magna fermentum iaculis eu. Aliquam id diam maecenas ultricies mi eget mauris pharetra. Mattis ullamcorper velit sed ullamcorper. Tortor pretium viverra suspendisse potenti nullam ac. Quam quisque id diam vel quam elementum. Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. Odio tempor orci dapibus ultrices in iaculis. A arcu cursus vitae congue mauris. Eu lobortis elementum nibh tellus molestie nunc non blandit. Lectus sit amet est placerat in egestas erat. In eu mi bibendum neque egestas congue. Interdum velit laoreet id donec ultrices. In ante metus dictum at.
+
+            Id faucibus nisl tincidunt eget nullam. Eget nunc lobortis mattis aliquam faucibus purus in massa. Nisl tincidunt eget nullam non. Senectus et netus et malesuada fames ac turpis egestas. Dolor sit amet consectetur adipiscing elit duis tristique. Aliquet nibh praesent tristique magna sit amet purus. Id semper risus in hendrerit. Tincidunt vitae semper quis lectus. Scelerisque in dictum non consectetur a erat. Eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum. In pellentesque massa placerat duis ultricies. Faucibus ornare suspendisse sed nisi lacus sed. Tempor orci eu lobortis elementum nibh tellus molestie nunc non.
+
+            Quis auctor elit sed vulputate mi sit amet mauris commodo. Proin gravida hendrerit lectus a. Cras tincidunt lobortis feugiat vivamus. Interdum velit laoreet id donec ultrices tincidunt arcu non. Mollis nunc sed id semper risus in. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Non nisi est sit amet facilisis magna etiam tempor orci. Consequat id porta nibh venenatis cras sed felis. Amet aliquam id diam maecenas. Vitae tortor condimentum lacinia quis vel eros donec. Pellentesque id nibh tortor id aliquet lectus proin nibh nisl. Nibh mauris cursus mattis molestie a iaculis at erat. Odio ut enim blandit volutpat maecenas volutpat blandit. Non tellus orci ac auctor augue mauris augue neque. Suspendisse sed nisi lacus sed viverra tellus. Turpis egestas pretium aenean pharetra magna ac. Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra.
+
+            Consectetur libero id faucibus nisl tincidunt eget nullam non nisi. Pellentesque habitant morbi tristique senectus. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis. Sit amet commodo nulla facilisi nullam vehicula ipsum a. Turpis egestas sed tempus urna et pharetra. Habitasse platea dictumst quisque sagittis. Risus at ultrices mi tempus imperdiet nulla. Lorem ipsum dolor sit amet consectetur adipiscing. Aliquam sem et tortor consequat id porta. A arcu cursus vitae congue mauris rhoncus aenean. Augue interdum velit euismod in. Nibh tortor id aliquet lectus proin nibh nisl. Purus ut faucibus pulvinar elementum integer enim neque.</p>
+        </div>
+    </section>
+    <script type="text/javascript">
+        let video = document.querySelector('video');
+        window.addEventListener('scroll', function(){
+            let value = 1 + window.scrollY/-800;
+            video.style.opacity = value;
+        })
+    </script>
+</body>
+</html>
