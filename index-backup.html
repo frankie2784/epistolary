@@ -1,0 +1,323 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>epistolary</title>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="An animated pieces effect for images with many possibilities" />
+    <meta name="keywords" content="animation, piece, fragment, box, css, javascript, demo, effect, web dev" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- <link rel="stylesheet" type="text/css" href="css/normalize.css" /> -->
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo-switch.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="pater/pater.css" /> -->
+    <script>document.documentElement.className = 'js';</script>
+</head>
+<body class="epistolary">
+    <!-- <div id="loading"></div>
+    <script>
+
+        function hideLoader() {
+            $('#loading').hide();
+        }
+
+        document.getElementById(window).ready(hideLoader);
+
+        // Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
+        setTimeout(hideLoader, 20 * 1000);
+    </script> -->
+    <!-- <div class="progress">
+        <div class="progress-value"></div>
+      </div> -->
+    <section class="frontpage">
+        <div class="title">
+            <img width="250px" object-fit="cover" src="img/epistolary title.svg"/>
+        </div>
+        <div class="melb">
+            <img width="100%" object-fit="cover" src="img/melb skyline.gif"/>
+        </div>
+        <div class="envelope">
+            <img width="100vw" object-fit="cover" src="img/envelope.png"/>
+        </div>
+        <div class="introletter">
+            <p><span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+        </div>
+        <div class="scrolldown-wrapper">
+            <div class="scrolldown">
+                <svg height="30" width="10">
+                    <circle class="scrolldown-p1" cx="5" cy="15" r="2" />
+                    <circle class="scrolldown-p2" cx="5" cy="15" r="2" />
+                </svg>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        const typedTextSpan = document.querySelector(".typed-text");
+        const cursorSpan = document.querySelector(".cursor");
+        const title = document.querySelector(".title");
+        const melb = document.querySelector(".melb");
+        const scrolldown = document.querySelector(".scrolldown");
+        typedTextSpan.setAttribute('style', 'white-space: pre-wrap;');
+
+        const textArray = [["Dear reader,",
+            "\r\n\r\n",
+            "I am so pleased to see you.",
+            " This is my first time writing a love letter.",
+            " I hope you can forgive my clumsy words.",
+            " I've thought a lot about what I wanted to write",
+            " - too much, in fact.",
+            " All I really want to say is...",
+            "\r\n\r\n",
+            "Thank you for being you.",
+            "\r\n\r\n",
+            "Always yours\r\n",
+            "x"],
+            ["Dear reader,",
+            "\r\n\r\n",
+            "It is so nice to see you again.",
+            " I've been looking forward to this moment for a while now.",
+            " This year has been a difficult one for all of us.",
+            " But we have carried each other through.",
+            " I guess what I want to say is...",
+            "\r\n\r\n",
+            "Thank you for being you.",
+            "\r\n\r\n",
+            "Always yours\r\n",
+            "x"],];
+        const typingDelay = 50;
+        const erasingDelay = 100;
+        const newTextDelay = 2000; // Delay between current and next text
+        let textArrayIndex = 0;
+        let charIndex = 0;
+        let randNum = Math.floor((Math.random() * textArray.length));
+        const randLetter = textArray[randNum];
+
+        function type() {
+            if (charIndex < randLetter[textArrayIndex].length) {
+                if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                typedTextSpan.textContent += randLetter[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            // } else if (textArrayIndex == textArray.length-2) {
+            //     textArrayIndex++;
+            //     charIndex = 0;
+            //     setTimeout(type, typingDelay + 2000);
+            } else if (textArrayIndex < randLetter.length-1) {
+                textArrayIndex++;
+                charIndex = 0;
+                setTimeout(type, typingDelay + 500);
+            } else {
+                setTimeout(function() {
+                title.style.transition = "1s opacity";
+                title.style.opacity = 0.7;
+                melb.style.transition = "3s opacity";
+                melb.style.opacity = 0.2;
+                setTimeout(function() {
+                scrolldown.style.transition = "2s opacity";
+                scrolldown.style.opacity = 1;}
+                , 1000)}
+                , 3000);
+            }
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+        if(randLetter.length) setTimeout(type, newTextDelay + 250);
+        });
+
+    </script>
+    
+    
+
+    <!-- <div class="video">
+ 
+    <section>
+
+        <video width=100% playsinline autoplay muted loop src="Melbourne circle.mp4" type="video/mp4">
+        </video>
+
+        <div class="overlay">
+            <h2>epistolary</h2>
+            <h1><em>/&#618;ˈp&#618;s.t&#601;l.er.i/</em></h1>
+            <p>coming soon.</p>
+        </div> -->
+
+    <!-- </section>
+    </div> -->
+
+    <style>
+        .slideshow {
+          -webkit-filter: grayscale(1);
+          filter: grayscale(1); /* blur(2px) */
+        }
+        .slideshow:hover {
+          -webkit-filter: grayscale(0);
+          filter: none;
+        }
+    </style>
+    <div class="content">
+        <header class="content__header">
+            <h2 class="content__title">epistolary</h2>
+        </header>
+
+        <div class="slideshow">
+            <div id="slide-1" class="slide" style="background-image: url(img/map.png)"></div>
+            <div id="slide-2" class="slide" style="background-image: url(img/booth.jpg)"></div>
+            <div id="slide-3" class="slide" style="background-image: url(img/jug.jpg)"></div>
+            <div class="pieces" style="background-image: url(img/map.png)"></div>
+        </div>
+        <nav class="menu">
+            <a class="menu__item menu__item--current" href="#slide-1" data-image="img/map.png">Handmade map thing <span>Rute Chaves</a>
+            <a class="menu__item" href="#slide-2" data-image="img/booth.jpg">Photobooth <span>Paul Yacoumis</span></a>
+            <a class="menu__item" href="#slide-3" data-image="img/jug.jpg">Weird jug thing <span>Ancient greeks</span></a>
+        </nav>
+        <div id="map">
+            <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+            <link
+            rel="stylesheet"
+            href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+            type="text/css"
+            />
+
+            <style>
+            .marker {
+            display: block;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            padding: 0;
+            }
+        
+            .mapboxgl-popup {
+              max-width: 200px;
+            }
+        
+            .mapboxgl-popup-content {
+              text-align: center;
+              font-family: 'Open Sans', sans-serif;
+            }
+            </style>
+            <script src="loadmap.js" charset="utf-8"></script>
+        </div>
+        <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+        <script type="text/javascript">
+            let frontpage = document.querySelector('section');
+            frontpage.style.opacity = 1
+            window.addEventListener('scroll', function(){
+                if (window.pageYOffset < window.innerHeight/2) {
+                    let value = 1
+                    frontpage.style.opacity = value
+                } else {
+                    let value = 1 - 2*(window.pageYOffset-window.innerHeight/2)/(window.innerHeight);
+                    frontpage.style.opacity = value
+                }});
+        </script>
+        <script type="text/javascript">
+            let content = document.querySelector('div.content');
+            content.style.opacity = 0;
+            window.addEventListener('scroll', function(){
+                if (window.pageYOffset < window.innerHeight/2) {
+                    let value = 0
+                    content.style.opacity = value
+                } else {
+                    let value = 2*(window.pageYOffset-window.innerHeight/2)/(window.innerHeight);
+                    content.style.opacity = value
+                }});
+        </script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/anime.min.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+        {
+            imagesLoaded(document.body, { background: true }, () => document.body.classList.remove('loading'));
+            
+            const menuItems = Array.from(document.querySelectorAll('.menu > .menu__item'));
+            
+            const piecesObj = new Pieces(document.querySelector('.slideshow > .pieces'), {
+                pieces: {rows: 14, columns: 12},
+                delay: [0,40],
+                hasTilt: true,
+                tilt: {
+                    maxRotationX: -5, 
+                    maxRotationY: -5, 
+                    maxTranslationX: -24, 
+                    maxTranslationY: -4
+                }
+            });
+            
+            let isAnimating = false;
+            let current = 0;
+
+            const openImage = (ev, item, pos) => {
+                ev.preventDefault();
+                // if ( isAnimating || current === pos ) {
+                //     return false;
+                // }
+                isAnimating = true;
+                menuItems[current].classList.remove('menu__item--current');
+                current = pos;
+                menuItems[current].classList.add('menu__item--current');
+                const imgsrc = item.dataset.image;
+
+                piecesObj.animate({
+                    duration: 200,
+                    easing: 'easeOutQuad',
+                    delay: (t,i,l) => {
+                        return parseInt(t.dataset.row) * parseInt(t.dataset.delay);
+                    },
+                    translateX: (t,i) => {
+                        return anime.random(-50,50)+'px';
+                    },
+                    translateY: (t,i) => { 
+                        return anime.random(-800,-200)+'px';
+                    },
+                    rotateZ: (t,i) => { 
+                        return anime.random(-45,45)+'deg';
+                    },
+                    opacity: 0,
+                    complete: () => {
+                        piecesObj.setImage(imgsrc);
+
+                        piecesObj.animate({
+                            duration: 500,
+                            easing: [0.3,1,0.3,1],
+                            delay: (t,i,l) => {
+                                return parseInt(t.dataset.row) * parseInt(t.dataset.delay);
+                            },
+                            translateX: 0,
+                            translateY: () => {
+                                return [anime.random(200,800)+'px','0px'];
+                            },
+                            rotateZ: 0,
+                            opacity: {
+                                value: 1,
+                                duration: 500,
+                                easing: 'linear'
+                            },
+                            complete: () => {
+                                isAnimating = false;
+                            }
+                        });
+                    }
+                });
+            };
+
+            menuItems.forEach((item,pos) => item.addEventListener('mouseover', (ev) => openImage(ev,item,pos)));
+        }
+        </script>
+    </div>
+    <input type="checkbox" id="nav-menu4"/>   
+    <label for="nav-menu4">
+          <span></span>
+          <span></span>
+          <span></span>
+     </label>
+</body>
+</html>
