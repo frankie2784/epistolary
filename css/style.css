@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=block');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=block');
+
+@font-face {
+    font-family: 'Myriad Pro';
+    font-weight: normal;
+    src: url("../fonts/Myriad Pro SemiExtended.woff") format("woff");
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Myriad Pro';
+    font-weight: bold;
+    src: url("../fonts/Myriad Pro Semibold SemiExtended.woff") format("woff");
+    font-display: block;
+}
+
+* {
+    -webkit-overflow-scrolling: touch;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    /* CSS HEX */
+    --pink: #d5abc1;
+    --grey: #7a7a7a;
+    --blue: #abbeca;
+    --pastel-pink: #dbabab;
+    --cadet-blue: #649ba8;
+    --almond: #f2e0cb;
+    --honeydew: #f3fcf0;
+    --deep-space-sparkle: #3d5a6c;
+    --dark-electric-blue: #4f6979;
+    --rhythm: #777791;
+    --languid-lavender: #d8cdd6;
+    --black: #000000;
+    --eerie-black: #171717;
+    background-color: white;
+    --content-font: "Myriad Pro", Arial normal, sans-serif;
+    --font-small: 24px;
+    --font-medium: 32px;
+    --font-large: 40px;
+    font-family: var(--content-font);
+    /* letter-spacing: 1px; */
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -ms-scroll-snap-type: y mandatory;
+        scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -webkit-scroll-behaviour: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    height: 100%;
+}
+
+.hiddenh1 {
+    display: none;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 45px);
+    top: 45px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.mousecursor {
+    background-color: black;
+    border-radius: 50%;
+    
+    height: 50px;
+    width: 50px;
+    
+    /* display: block; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    -webkit-filter: invert(1);
+    
+            filter: invert(1);
+    mix-blend-mode: difference;
+  }
+
+.preload {
+    display: none;
+}
+
+hr {
+    background-color: var(--grey);
+}
+
+
+/* Scroll icon */
+
+.scrolldown-wrapper {
+    left: 50%;
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+.scrolldown {
+    border: 2px solid var(--deep-space-sparkle);
+    border-radius: 30px;
+    height: 46px;
+    margin: 0 auto 8px;
+    text-align: center;
+    width: 30px;
+    opacity: 0;
+}
+
+.scrolldown-p1,
+.scrolldown-p2 {
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-name: scrolldown;
+            animation-name: scrolldown;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    fill: var(--deep-space-sparkle);
+}
+
+.scrolldown-p2 {
+    -webkit-animation-delay: .75s;
+            animation-delay: .75s;
+}
+
+@-webkit-keyframes scrolldown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate(0, -8px);
+                transform: translate(0, -8px);
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(0, 8px);
+                transform: translate(0, 8px);
+    }
+}
+
+@keyframes scrolldown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate(0, -8px);
+                transform: translate(0, -8px);
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(0, 8px);
+                transform: translate(0, 8px);
+    }
+}

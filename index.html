@@ -1,187 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K2M5K4JQCS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-K2M5K4JQCS');
+    </script> -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>epistolary</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Epistolary is an evolving online exhibition of love letters which offer insights into how citizens can connect with, create, and care for places from afar through memory, imagination and digital technology."/>
+    <title>Welcome to epistolary</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/intro.css">
     <link rel="shortcut icon" href="favicon.ico">
+    <link rel="preload" href="fonts/Myriad Pro Semibold SemiExtended.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="fonts/Myriad Pro SemiExtended.woff" as="font" type="font/woff" crossorigin>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <script src="js/typing.js" charset="utf-8" defer></script>
+    <script src="js/header.js" defer></script>
 </head>
-<body class="epistolary">
-    <!-- <div class="topnav"></div> -->
-    <section class="frontpage">
-        <!-- <div class="title">
-            <img width="250px" object-fit="cover" src="img/epistolary title black.svg"/>
-        </div> -->
-        <!-- <div class="melb">
-            <img width="100%" object-fit="cover" src="img/melb skyline.gif"/>
-        </div> -->
-        <div class="logo">
-            <img width="250px" object-fit="cover" src="img/Epistolary logo transparent.png"/>
-        </div>
-        <div class="introletter">
-            <p><span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
-        </div>
-        <div class="scrolldown-wrapper">
-            <div class="scrolldown">
-                <svg height="30" width="10">
-                    <circle class="scrolldown-p1" cx="5" cy="15" r="2" />
-                    <circle class="scrolldown-p2" cx="5" cy="15" r="2" />
-                </svg>
+<body>
+    <h1 class="hiddenh1">Welcome to epistolary</h1>
+    <!-- The overlay -->
+    <div id="header"></div>
+    <div class="epistolary">
+        <div class="frontpage">
+            <div class="introletter">
+                <div class="hidden-text"></div>
+                <div class="displayed-text">
+                    <div class="span">
+                        <span class="typed-text"></span>
+                        <span class="cursor">&nbsp;</span>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="scrolldown-wrapper">
+                <div class="scrolldown">
+                    <svg height="30" width="10">
+                        <circle class="scrolldown-p1" cx="5" cy="15" r="2" />
+                        <circle class="scrolldown-p2" cx="5" cy="15" r="2" />
+                    </svg>
+                </div>
+            </div> -->
+            <div class="epistolary-title">
+                <div id="title">epistolary</div>
+                <div id="enter">enter here</div>
+                <a class="divLink-landing" href="letters.html"></a>
+            </div>
+            <div class="programimage">
+                <div class="elements" id="background"></div>
+                <div class="elements" id="block"></div>
+                <div class="elements" id="heart"><img src="program/heart_small.png" srcset="program/heart.png 243w"></div>
+                <div class="elements" id="letter"><img src="program/letter_small.png" srcset="program/letter.png 330w"></div>
+                <div class="elements" id="cloudbuilding_half"><img src="program/cloudbuilding_half_small.png" srcset="program/cloudbuilding_half.png 1920w"></div>
+                <div class="elements" id="riverbuilding"><img src="program/riverbuilding_small.png" srcset="program/riverbuilding.png 1920w"></div>
+                <div class="elements" id="bwbuilding"><img src="program/bwbuilding_small.png" srcset="program/bwbuilding.png 1920w"></div>
+                <div class="elements" id="bwbuilding_ud"><img src="program/bwbuilding_ud_small.png" srcset="program/bwbuilding_ud.png 1920w"></div>
+                <div class="elements" id="arrow"><img src="img/titlearrow.svg"></div>
+                <div class="elements" id="pinkbuilding"><img src="program/pinkbuilding_small.png" srcset="program/pinkbuilding.png 1920w"></div>
+                <div class="elements" id="cloudbuilding"><img src="program/cloudbuilding_small.png" srcset="program/cloudbuilding.png 1920w"></div>
+            </div>
+            <!-- <div class="mousecursor"></div> -->
+            <div class="skipintro">Skip intro &rsaquo;
+                <a class="divLink-landing" href="letters.html"></a>
             </div>
         </div>
-    </section>
-    <section class="secondpage">
-        <div class="secondlogo">
-            <img width="150px" object-fit="cover" src="img/Epistolary logo transparent.png"/>
-        </div>
-        <div class="about">
-            <p>So what is this all about?<br><br>I'm trying to figure that out myself.</p>
-        </div>
-    </section>
-    <script>
-        const typedTextSpan = document.querySelector(".typed-text");
-        const cursorSpan = document.querySelector(".cursor");
-        const logo = document.querySelector(".logo");
-        // const melb = document.querySelector(".melb");
-        const scrolldown = document.querySelector(".scrolldown");
-        typedTextSpan.setAttribute('style', 'white-space: pre-wrap;');
-
-        const textArray = [["Dear reader,",
-            "\r\n\r\n",
-            "I am so pleased to see you.",
-            " This is my first time writing a love letter.",
-            " I hope you can forgive my clumsy words.",
-            " I've thought a lot about what I wanted to write",
-            " - too much, in fact.",
-            " All I really want to say is...",
-            "\r\n\r\n",
-            "Thank you for being you.",
-            "\r\n\r\n",
-            "Always yours\r\n",
-            "x"],
-            ["Dear reader,",
-            "\r\n\r\n",
-            "It is so nice to see you again.",
-            " I've been looking forward to this moment for a while now.",
-            " This year has been a difficult one for all of us.",
-            " But we have carried each other through.",
-            " I guess what I want to say is...",
-            "\r\n\r\n",
-            "Thank you for being you.",
-            "\r\n\r\n",
-            "Always yours\r\n",
-            "x"],];
-        const typingDelay = 50;
-        const erasingDelay = 100;
-        const newTextDelay = 2000; // Delay between current and next text
-        let textArrayIndex = 0;
-        let charIndex = 0;
-        let randNum = Math.floor((Math.random() * textArray.length));
-        const randLetter = textArray[randNum];
-
-        function type() {
-            if (charIndex < randLetter[textArrayIndex].length) {
-                if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-                typedTextSpan.textContent += randLetter[textArrayIndex].charAt(charIndex);
-                charIndex++;
-                setTimeout(type, typingDelay);
-            // } else if (textArrayIndex == textArray.length-2) {
-            //     textArrayIndex++;
-            //     charIndex = 0;
-            //     setTimeout(type, typingDelay + 2000);
-            } else if (textArrayIndex < randLetter.length-1) {
-                textArrayIndex++;
-                charIndex = 0;
-                setTimeout(type, typingDelay + 500);
-            } else {
-                setTimeout(function() {
-                logo.style.transition = "2s opacity";
-                logo.style.opacity = 1;
-                setTimeout(function() {
-                scrolldown.style.transition = "2s opacity";
-                scrolldown.style.opacity = 1;}
-                , 1000)}
-                , 3000);
-            }
-            // else {
-            //     setTimeout(function() {
-            //     title.style.transition = "1s opacity";
-            //     title.style.opacity = 0.7;
-            //     melb.style.transition = "3s opacity";
-            //     melb.style.opacity = 0.2;
-            //     setTimeout(function() {
-            //     scrolldown.style.transition = "2s opacity";
-            //     scrolldown.style.opacity = 1;}
-            //     , 1000)}
-            //     , 3000);
-            // }
-        }
-        
-        document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
-        if(randLetter.length) setTimeout(type, newTextDelay + 250);
-        });
-
-    </script>
-    <script type="text/javascript">
-        let frontpage = document.querySelector('.frontpage');
-        frontpage.style.opacity = 1
-        window.addEventListener('scroll', function(){
-            if (window.pageYOffset < window.innerHeight/2) {
-                let value = 1
-                frontpage.style.opacity = value;
-            } else {
-                let value = 1 - 2*(window.pageYOffset-window.innerHeight/2)/(window.innerHeight);
-                frontpage.style.opacity = Math.max(0,value);
-            }});
-    </script>
-    <script type="text/javascript">
-        let content = document.querySelector('.secondpage');
-        content.style.opacity = 0;
-        window.addEventListener('scroll', function(){
-            if (window.pageYOffset < window.innerHeight/2) {
-                let value = 0
-                content.style.opacity = value
-            } else if (window.pageYOffset < 3*window.innerHeight/2) {
-                let value = 2*(window.pageYOffset-window.innerHeight/2)/(window.innerHeight);
-                content.style.opacity = Math.min(1,Math.max(0,value));
-            }
-        });
-    </script>
-    <!-- The overlay -->
-    <div id="myNav" class="overlay">
-
-        <!-- Overlay content -->
-        <div class="overlay-content">
-            <a href="index.html">About</a>
-            <a href="content.html">Letters</a>
-            <a href="map.html">Map</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH7XekHWgHmbWy-BpbkYjYDSyxJSO-2WfrBs9shWs961Ie7w/viewform?gxids=7628" target="_blank">Write your own</a>
-            <a href="https://www.eventbrite.com.au/e/a-lovers-discourse-write-a-love-letter-to-melbourne-tickets-132865082037" target="_blank">Workshop</a>
-            <a href="https://www.instagram.com" target="_blank">Social</a>
-        </div>
-
     </div>
-    <input type="checkbox" id="nav-menu4" onclick="navbar()"/>   
-    <label id="label" for="nav-menu4">
-        <span id="span1"></span>
-        <span id="span2"></span>
-        <span id="span3"></span>
-    </label>
     <script>
-        function navbar() {
-            let checkbox = document.querySelector('#nav-menu4');
-            if (checkbox.checked) {
-                document.getElementById("myNav").style.height = "100%";
-                document.getElementById("span1").style.backgroundColor = "#818181";
-                document.getElementById("span2").style.backgroundColor = "#818181";
-                document.getElementById("span3").style.backgroundColor = "#818181";
-            } else {
-                document.getElementById("myNav").style.height = "0%";
-                document.getElementById("span1").style.backgroundColor = "#3d5a6cff";
-                document.getElementById("span2").style.backgroundColor = "#3d5a6cff";
-                document.getElementById("span3").style.backgroundColor = "#3d5a6cff";
-            }
+        window.onload = function () {
+            if ('hasCodeRunBefore' in localStorage) {
+                localStorage.removeItem("hasCodeRunBefore");
+            }l
         }
     </script>
 </body>
