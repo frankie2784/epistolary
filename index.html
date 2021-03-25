@@ -1,34 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K2M5K4JQCS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-K2M5K4JQCS');
+    </script> -->
+
     <meta charset="utf-8">
-    <title>epistolary</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Epistolary is an evolving online exhibition of love letters which offer insights into how citizens can connect with, create, and care for places from afar through memory, imagination and digital technology."/>
+    <title>Welcome to epistolary</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/intro.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="preload" href="fonts/Myriad Pro Semibold SemiExtended.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="fonts/Myriad Pro SemiExtended.woff" as="font" type="font/woff" crossorigin>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <script src="js/typing.js" charset="utf-8" defer></script>
+    <script src="js/header.js" defer></script>
 </head>
 <body>
-    <section>
-      <!-- <iframe src="https://www.youtube.com/embed/QbMB7mgnlro?playlist=QbMB7mgnlro&controls=0&loop=1&mute=1&autoplay=1"></iframe> -->
-        <video width=100% playsinline autoplay muted loop src="Melbourne circle.mp4" type="video/mp4">
-        </video>
-        <div class="overlay">
-            <h2>epistolary</h2>
-            <h1><em>/&#618;ˈp&#618;s.t&#601;l.er.i/</em></h1>
-            <p>coming soon.</p>
+    <h1 class="hiddenh1">Welcome to epistolary</h1>
+    <!-- The overlay -->
+    <div id="header"></div>
+    <div class="epistolary">
+        <div class="frontpage">
+            <div class="introletter">
+                <div class="hidden-text"></div>
+                <div class="displayed-text">
+                    <div class="span">
+                        <span class="typed-text"></span>
+                        <span class="cursor">&nbsp;</span>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="scrolldown-wrapper">
+                <div class="scrolldown">
+                    <svg height="30" width="10">
+                        <circle class="scrolldown-p1" cx="5" cy="15" r="2" />
+                        <circle class="scrolldown-p2" cx="5" cy="15" r="2" />
+                    </svg>
+                </div>
+            </div> -->
+            <div class="epistolary-title">
+                <div id="title">epistolary</div>
+                <div id="enter">enter here</div>
+                <a class="divLink-landing" href="letters.html"></a>
+            </div>
+            <div class="programimage">
+                <div class="elements" id="background"></div>
+                <div class="elements" id="block"></div>
+                <div class="elements" id="heart"><img src="program/heart_small.png" srcset="program/heart.png 243w"></div>
+                <div class="elements" id="letter"><img src="program/letter_small.png" srcset="program/letter.png 330w"></div>
+                <div class="elements" id="cloudbuilding_half"><img src="program/cloudbuilding_half_small.png" srcset="program/cloudbuilding_half.png 1920w"></div>
+                <div class="elements" id="riverbuilding"><img src="program/riverbuilding_small.png" srcset="program/riverbuilding.png 1920w"></div>
+                <div class="elements" id="bwbuilding"><img src="program/bwbuilding_small.png" srcset="program/bwbuilding.png 1920w"></div>
+                <div class="elements" id="bwbuilding_ud"><img src="program/bwbuilding_ud_small.png" srcset="program/bwbuilding_ud.png 1920w"></div>
+                <div class="elements" id="arrow"><img src="img/titlearrow.svg"></div>
+                <div class="elements" id="pinkbuilding"><img src="program/pinkbuilding_small.png" srcset="program/pinkbuilding.png 1920w"></div>
+                <div class="elements" id="cloudbuilding"><img src="program/cloudbuilding_small.png" srcset="program/cloudbuilding.png 1920w"></div>
+            </div>
+            <!-- <div class="mousecursor"></div> -->
+            <div class="skipintro">Skip intro &rsaquo;
+                <a class="divLink-landing" href="letters.html"></a>
+            </div>
         </div>
-    </section>
-    <!-- <section>
-        <div class="content">
-           <h2>epistolary</h2>
-           <p>coming soon</p>
-        </div>
-    </section> -->
-    <script type="text/javascript">
-        let video = document.querySelector('video');
-        video.style.opacity = 0.4;
-        // window.addEventListener('scroll', function(){
-        //     let value = 1 + window.scrollY/-800;
-        //     video.style.opacity = 0.4;
-        // })
+    </div>
+    <script>
+        window.onload = function () {
+            if ('hasCodeRunBefore' in localStorage) {
+                localStorage.removeItem("hasCodeRunBefore");
+            }l
+        }
     </script>
 </body>
 </html>

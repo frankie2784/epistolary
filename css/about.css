@@ -1,0 +1,355 @@
+/* About page */
+
+.about {
+    width: 100%;
+    height: calc(100vh - 45px);
+    top: 45px;
+    position: relative;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    text-align: center;
+    color: var(--grey);
+    font-size: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform-style: inherit;
+    perspective: 3px;
+	-webkit-perspective: 3px;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(15vh);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, visibility;
+}
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
+
+section {
+	transform-style: inherit;
+    background-size: cover;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+div {
+    transform-style: inherit;
+}
+
+h1 {
+    transform-style: inherit;
+}
+
+section.image {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+section.image:not(:first-child) {
+    height: 70%;
+}
+
+
+div.image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(-1px) scale(calc(4/3));
+    -webkit-transform: translateZ(-1px) scale(calc(4/3));
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+div.image:last-child {
+    transform: unset;
+    -webkit-transform: unset;
+}
+
+div.heading {
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    padding: 50px 35% 50px 35%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transform: translate(-50%, -50%) translateZ(1px) scale(calc(2/3));
+            transform: translate(-50%, -50%) translateZ(1px) scale(calc(2/3));
+    z-index: 1;
+}
+
+#makeletterinstructions div.heading {
+    transform: translate(-50%, -50%) translateZ(-1px) scale(calc(4/3));
+    -webkit-transform: translate(-50%, -50%) translateZ(-1px) scale(calc(4/3));
+}
+
+.heading #title {
+    font-size: 30px;
+    font-weight: normal;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.heading #heart {
+    position: absolute;
+    opacity: 0.4;
+    filter: saturate(70%);
+    background-image: url(../img/heart_pink.png);
+    left: 50%;
+    -webkit-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+            transform: translate(-50%);
+    width: 80%;
+    height: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+section.text {
+    background-color: white;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 50px 10% 50px 10%;
+}
+
+div#tarryn, div#paul {
+    position: relative;
+    width: 100%;
+    margin: 3%;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+#name {
+    position: relative;
+    width: 100%;
+    height: 250px;
+}
+
+div.img, div.img {
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+div#paul .img {
+    background-image: url(../img/paulbio.jpeg);
+}
+
+div#tarryn .img {
+    background-image: url(../img/tarrynbio.jpg);
+}   
+
+h2 {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: var(--font-small);
+    font-weight: bold;
+    padding: 5px 0px 5px 0px;
+}
+
+#tarryn h2 {
+    background-color: #ffffffcc;
+    color: #4f4f4f;
+}
+
+#paul h2 {
+    background-color: #4f4f4fcc;
+    color: #f3fcf0;
+}
+
+a {
+    color: var(--grey);
+    text-decoration: underline;
+}
+
+.image#market {
+    background-image: url(../melb/melb10.jpg);
+}
+.image#shoes {
+    background-image: url(../melb/melb12.jpg);
+    background-position: left;
+}
+.image#tram {
+    background-image: url(../melb/melb08.jpg);
+    background-position: left;
+}
+.image#ngv {
+    background-image: url(../melb/melb38.jpg);
+}
+.image#dumpster {
+    background-image: url(../melb/melb13.jpg);
+}
+.image#river {
+    background-image: url(../melb/melb11.jpg);
+}
+.image#flower {
+    background-image: url(../melb/melb09.jpg);
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) and (orientation: portrait), only screen and (max-height: 600px) and (orientation: landscape) {
+
+    .image#market {
+        background-image: url(../melb/melb10_small.jpg);
+    }
+    .image#shoes {
+        background-image: url(../melb/melb12_small.jpg);
+        background-position: left;
+    }
+    .image#tram {
+        background-image: url(../melb/melb08_small.jpg);
+        background-position: left;
+    }
+    .image#ngv {
+        background-image: url(../melb/melb38_small.jpg);
+    }
+    .image#dumpster {
+        background-image: url(../melb/melb13_small.jpg);
+    }
+    .image#river {
+        background-image: url(../melb/melb11_small.jpg);
+    }
+    .image#flower {
+        background-image: url(../melb/melb09_small.jpg);
+    }
+
+    .heading #heart {
+        background-image: url(../img/heart_pink_small.png);
+    }
+
+    .heading #title {
+        font-size: 25px;
+    }
+
+    div.heading {
+        padding: 50px 20% 50px 20%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-height: 600px) and (orientation: landscape) {
+
+    section.text.flex {
+        text-align: left;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: start;
+    }
+
+    div.heading {
+        padding: 50px 30% 50px 30%;
+    }
+}
+
+.swirl {
+    width: 80px;
+    height: 80px;
+    filter: contrast(0%);
+    padding: 20px;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 769px) {
+
+    section.text {
+        padding: 50px 20% 50px 20%;
+    }
+
+    div.heading {
+        padding: 50px 35% 50px 35%;
+    }
+
+    section.text.flex {
+        text-align: left;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: start;
+        padding: 50px 10% 50px 10%;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+    section.text {
+        padding: 50px 25% 50px 25%;
+    }
+
+    .text.flex {
+        padding: 50px 10% 50px 10%;
+    }
+
+    div.heading {
+        padding: 50px 40% 50px 40%;
+    }
+
+}

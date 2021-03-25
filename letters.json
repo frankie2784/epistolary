@@ -1,0 +1,92 @@
+[
+    {
+    "id": "letter1",
+    "title": "Dear place...",
+    "author": "rute chaves",
+    "from": "Love r.",
+    "icon": "",
+    "images": ["rutechaves_small_1.jpg","rutechaves_small_2.gif","rutechaves_small_3.jpg","rutechaves_small_4.jpg","rutechaves_small_5.jpg"],
+    "description": "",
+    "coordinates": [144.9577778, -37.7790556]
+    },
+    {
+    "id": "letter2",
+    "title": "Dear Eastern Freeway...",
+    "author": "Sierra Verity-Beasley",
+    "from": "The girl from the Eastern Suburbs",
+    "icon": "",
+    "images": ["sierraveritybeasley_small_1.jpg"],
+    "description": "",
+    "coordinates": [145.0149406436627,-37.7910456306492]
+    },
+    {
+    "id": "letter3",
+    "title": "Dear small corner of Hawthorn East...",
+    "author": "Amandine Thomas",
+    "from": "Love Amandine",
+    "icon": "",
+    "images": ["amandinethomas_small_1.jpg","amandinethomas_small_2.jpg"],
+    "description": "",
+    "coordinates": [145.046064640029,-37.82865310806947]
+    },
+    {
+    "id": "letter4",
+    "title": "Dear Melbourne...",
+    "author": "Tarryn Handcock & rute chaves",
+    "from": "Love Tarryn & rute",
+    "icon": "",
+    "images": ["tarrynhandcock_small_1.jpg","tarrynhandcock_small_2.jpg","tarrynhandcock_small_3.jpg","tarrynhandcock_4.jpg","tarrynhandcock_small_5.jpg","tarrynhandcock_small_6.jpg"],
+    "description": "",
+    "coordinates": [144.95924227295765,-37.81741479958219]
+    },
+    {
+    "id": "letter5",
+    "title": "Dear K...",
+    "author": "Sean Ryan",
+    "from": "Your S",
+    "icon": "",
+    "images": ["seanryan_1.jpg","seanryan_2.jpg","seanryan_small_3.jpg"],
+    "description": "",
+    "coordinates": [144.9651640607231,-37.81199092768334]
+    },
+    {
+    "id": "letter6",
+    "title": "Dear Melbourne...",
+    "author": "Alice Lewis",
+    "from": "Love Alice",
+    "icon": "",
+    "images": ["alicelewis_small_1.jpg"],
+    "description": "",
+    "coordinates": [144.963269972722031,-37.81355329951707]
+    },
+    {
+    "id": "letter7",
+    "title": "At the edge of the Yarra River during Moomba Carnival...",
+    "author": "Ren Gregorčič",
+    "from": "Love Ren",
+    "icon": "",
+    "images": ["rengregorcic_small_1.jpg"],
+    "description": "",
+    "coordinates": [144.9710278,-37.8203611]
+    },
+    {
+    "id": "letter8",
+    "title": "Dear Testing Grounds...",
+    "author": "Millie Cattlin and Joseph Norster",
+    "from": "Love Millie & Joseph",
+    "icon": "",
+    "images": ["milliecattlin_1.jpg","milliecattlin_2.jpg","milliecattlin_3.jpg","milliecattlin_4.jpg","milliecattlin_5.jpg","milliecattlin_6.jpg"],
+    "description": "",
+    "coordinates": [144.9676853730152,-37.82068594759646]
+    },
+    {
+    "id": "letter9",
+    "title": "Dearest Darebin...",
+    "author": "Michael Gill",
+    "from": "Love Michael",
+    "icon": "",
+    "images": ["michaelgill_1.jpg"],
+    "description": "",
+    "coordinates": [145.03356136617379,-37.772949410066154]
+    }
+]
