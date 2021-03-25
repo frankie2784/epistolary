@@ -210,7 +210,7 @@ h2 {
 }
 
 a {
-    color: var(--grey);
+    color: var(--grey); 
     text-decoration: underline;
 }
 
