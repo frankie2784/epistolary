@@ -83,11 +83,6 @@ div.image {
     background-repeat: no-repeat;
 }
 
-div.image:last-child {
-    transform: unset;
-    -webkit-transform: unset;
-}
-
 div.heading {
     background-color: rgba(0,0,0,0.5);
     color: #fff;
@@ -117,6 +112,12 @@ div.heading {
 #makeletterinstructions div.heading {
     transform: translate(-50%, -50%) translateZ(-1px) scale(calc(4/3));
     -webkit-transform: translate(-50%, -50%) translateZ(-1px) scale(calc(4/3));
+}
+
+.text .flex {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .heading #title {
@@ -213,6 +214,20 @@ a {
     text-decoration: underline;
 }
 
+.swirl {
+    width: 80px;
+    height: 80px;
+    filter: contrast(0%);
+    padding: 20px;
+}
+
+.left {
+    font-size: 16px;
+    padding: 3%;
+    width: 100%;
+    text-align: left;
+}
+
 .image#market {
     background-image: url(../melb/melb10.jpg);
 }
@@ -247,11 +262,9 @@ a {
     }
     .image#shoes {
         background-image: url(../melb/melb12_small.jpg);
-        background-position: left;
     }
     .image#tram {
         background-image: url(../melb/melb08_small.jpg);
-        background-position: left;
     }
     .image#ngv {
         background-image: url(../melb/melb38_small.jpg);
@@ -277,6 +290,18 @@ a {
     div.heading {
         padding: 50px 20% 50px 20%;
     }
+
+    .text .flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    .left {
+        font-size: 15px;
+        padding: 0;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -300,13 +325,7 @@ a {
     div.heading {
         padding: 50px 30% 50px 30%;
     }
-}
 
-.swirl {
-    width: 80px;
-    height: 80px;
-    filter: contrast(0%);
-    padding: 20px;
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -314,7 +333,7 @@ a {
 @media only screen and (min-width: 769px) {
 
     section.text {
-        padding: 50px 20% 50px 20%;
+        padding: 50px 15% 50px 15%;
     }
 
     div.heading {
@@ -341,7 +360,7 @@ a {
 @media only screen and (min-width: 1200px) {
 
     section.text {
-        padding: 50px 25% 50px 25%;
+        padding: 50px 20% 50px 20%;
     }
 
     .text.flex {
@@ -350,6 +369,10 @@ a {
 
     div.heading {
         padding: 50px 40% 50px 40%;
+    }
+
+    .left {
+        font-size: 18px;
     }
 
 }
