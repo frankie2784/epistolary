@@ -50,7 +50,8 @@ noscript div {
     width: 30px;
     top: 7.5px;
     right: 80px;
-    filter: contrast(0%);
+    -webkit-filter: contrast(0%);
+            filter: contrast(0%);
 }
 
 /* Hamburger menu */

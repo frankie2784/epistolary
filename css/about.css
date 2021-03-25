@@ -13,7 +13,8 @@
     font-size: 20px;
     overflow-x: hidden;
     overflow-y: auto;
-    transform-style: inherit;
+    -webkit-transform-style: inherit;
+            transform-style: inherit;
     perspective: 3px;
 	-webkit-perspective: 3px;
 	transform-style: preserve-3d;
@@ -22,20 +23,29 @@
 
 .fade-in {
     opacity: 0;
-    transform: translateY(15vh);
+    -webkit-transform: translateY(15vh);
+        -ms-transform: translateY(15vh);
+            transform: translateY(15vh);
     visibility: hidden;
+    -webkit-transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
+    transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
+    -o-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, -webkit-transform 0.6s ease-out;
     will-change: opacity, visibility;
 }
 
 .fade-in.is-visible {
     opacity: 1;
-    transform: none;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
     visibility: visible;
 }
 
 section {
-	transform-style: inherit;
+	-webkit-transform-style: inherit;
+	        transform-style: inherit;
     background-size: cover;
     position: relative;
     display: -webkit-box;
@@ -54,11 +64,13 @@ section {
 }
 
 div {
-    transform-style: inherit;
+    -webkit-transform-style: inherit;
+            transform-style: inherit;
 }
 
 h1 {
-    transform-style: inherit;
+    -webkit-transform-style: inherit;
+            transform-style: inherit;
 }
 
 section.image {
@@ -115,8 +127,12 @@ div.heading {
 }
 
 .text .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 100%;
 }
 
@@ -131,7 +147,8 @@ div.heading {
 .heading #heart {
     position: absolute;
     opacity: 0.4;
-    filter: saturate(70%);
+    -webkit-filter: saturate(70%);
+            filter: saturate(70%);
     background-image: url(../img/heart_pink.png);
     left: 50%;
     -webkit-transform: translate(-50%);
@@ -157,6 +174,8 @@ div#tarryn, div#paul {
     position: relative;
     width: 100%;
     margin: 3%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -193,7 +212,9 @@ h2 {
     position: absolute;
     bottom: 0%;
     left: 50%;
-    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+            transform: translate(-50%);
     font-size: var(--font-small);
     font-weight: bold;
     padding: 5px 0px 5px 0px;
@@ -217,7 +238,8 @@ a {
 .swirl {
     width: 80px;
     height: 80px;
-    filter: contrast(0%);
+    -webkit-filter: contrast(0%);
+            filter: contrast(0%);
     padding: 20px;
 }
 
