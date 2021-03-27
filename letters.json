@@ -5,7 +5,8 @@
     "author": "rute chaves",
     "from": "Love r.",
     "icon": "",
-    "images": ["rutechaves_small_1.jpg","rutechaves_small_2.gif","rutechaves_small_3.jpg","rutechaves_small_4.jpg","rutechaves_small_5.jpg"],
+    "images_small": ["rutechaves_small_1.jpg","rutechaves_small_2.gif","rutechaves_small_3.jpg","rutechaves_small_4.jpg","rutechaves_small_5.jpg"],
+    "images": ["rutechaves_1.jpg","rutechaves_2.gif","rutechaves_3.jpg","rutechaves_4.jpg","rutechaves_5.jpg"],
     "description": "",
     "coordinates": [144.9577778, -37.7790556]
     },
@@ -15,7 +16,8 @@
     "author": "Sierra Verity-Beasley",
     "from": "The girl from the Eastern Suburbs",
     "icon": "",
-    "images": ["sierraveritybeasley_small_1.jpg"],
+    "images_small": ["sierraveritybeasley_small_1.jpg"],
+    "images": ["sierraveritybeasley_1.jpg"],
     "description": "",
     "coordinates": [145.0149406436627,-37.7910456306492]
     },
@@ -25,7 +27,8 @@
     "author": "Amandine Thomas",
     "from": "Love Amandine",
     "icon": "",
-    "images": ["amandinethomas_small_1.jpg","amandinethomas_small_2.jpg"],
+    "images_small": ["amandinethomas_small_1.jpg","amandinethomas_small_2.jpg"],
+    "images": ["amandinethomas_1.jpg","amandinethomas_2.jpg"],
     "description": "",
     "coordinates": [145.046064640029,-37.82865310806947]
     },
@@ -35,7 +38,8 @@
     "author": "Tarryn Handcock & rute chaves",
     "from": "Love Tarryn & rute",
     "icon": "",
-    "images": ["tarrynhandcock_small_1.jpg","tarrynhandcock_small_2.jpg","tarrynhandcock_small_3.jpg","tarrynhandcock_4.jpg","tarrynhandcock_small_5.jpg","tarrynhandcock_small_6.jpg"],
+    "images_small": ["tarrynhandcock_small_1.jpg","tarrynhandcock_small_2.jpg","tarrynhandcock_small_3.jpg","tarrynhandcock_4.jpg","tarrynhandcock_small_5.jpg","tarrynhandcock_small_6.jpg"],
+    "images": ["tarrynhandcock_1.jpg","tarrynhandcock_2.jpg","tarrynhandcock_3.jpg","tarrynhandcock_4.jpg","tarrynhandcock_5.jpg","tarrynhandcock_6.jpg"],
     "description": "",
     "coordinates": [144.95924227295765,-37.81741479958219]
     },
@@ -45,7 +49,8 @@
     "author": "Sean Ryan",
     "from": "Your S",
     "icon": "",
-    "images": ["seanryan_1.jpg","seanryan_2.jpg","seanryan_small_3.jpg"],
+    "images_small": ["seanryan_1.jpg","seanryan_2.jpg","seanryan_small_3.jpg"],
+    "images": ["seanryan_1.jpg","seanryan_2.jpg","seanryan_3.jpg"],
     "description": "",
     "coordinates": [144.9651640607231,-37.81199092768334]
     },
@@ -55,7 +60,8 @@
     "author": "Alice Lewis",
     "from": "Love Alice",
     "icon": "",
-    "images": ["alicelewis_small_1.jpg"],
+    "images_small": ["alicelewis_small_1.jpg"],
+    "images": ["rengregorcic_1.jpg"],
     "description": "",
     "coordinates": [144.963269972722031,-37.81355329951707]
     },
@@ -65,7 +71,8 @@
     "author": "Ren Gregorčič",
     "from": "Love Ren",
     "icon": "",
-    "images": ["rengregorcic_small_1.jpg"],
+    "images_small": ["rengregorcic_small_1.jpg"],
+    "images": ["rengregorcic_1.jpg"],
     "description": "",
     "coordinates": [144.9710278,-37.8203611]
     },
@@ -75,6 +82,7 @@
     "author": "Millie Cattlin and Joseph Norster",
     "from": "Love Millie & Joseph",
     "icon": "",
+    "images_small": ["milliecattlin_1.jpg","milliecattlin_2.jpg","milliecattlin_3.jpg","milliecattlin_4.jpg","milliecattlin_5.jpg","milliecattlin_6.jpg"],
     "images": ["milliecattlin_1.jpg","milliecattlin_2.jpg","milliecattlin_3.jpg","milliecattlin_4.jpg","milliecattlin_5.jpg","milliecattlin_6.jpg"],
     "description": "",
     "coordinates": [144.9676853730152,-37.82068594759646]
@@ -85,6 +93,7 @@
     "author": "Michael Gill",
     "from": "Love Michael",
     "icon": "",
+    "images_small": ["michaelgill_small_1.jpg"],
     "images": ["michaelgill_1.jpg"],
     "description": "",
     "coordinates": [145.03356136617379,-37.772949410066154]

@@ -1,4 +1,6 @@
-var imagesHTML, numImages, topZ;
+var imagesHTML, imageshidden, numImages, topZ;
+var borderThickness = Math.min(Math.min(window.innerHeight,window.innerWidth)*4.0/100,17);
+var lastSet;
 var path = "letters/";
 var prevbtn = document.getElementById('prev');
 var nextbtn = document.getElementById('next');
@@ -10,10 +12,14 @@ function preloadImage(url) {
 }
 
 function loadImages(element) {
-    let divChild;
+    let divChild, hiddenChild;
+    let imgs;
+    let imgLeft, imgTop, imgWidth, imgHeight, maxScale, imgNaturalWidth, imgNaturalHeight;
     imagesHTML = document.getElementsByClassName('lightbox-img');
+    imageshidden = document.getElementsByClassName('lightbox-img-hidden');
     for (let i=imagesHTML.length-1; i>=0; i--) {
         imagesHTML[i].remove();
+        imageshidden[i].remove();
     }
 
     $('label').css({"visibility":"hidden"});
@@ -27,7 +33,12 @@ function loadImages(element) {
         let letter = markersjson.filter(function(d){
             return d.id == element.id;
           });
-        let imgs = letter[0].images;
+        
+        if (window.innerWidth >= 769) {
+            imgs = letter[0].images;
+        } else {
+            imgs = letter[0].images_small;
+        }
 
         for (let i=0; i<imgs.length; i++) {
             preloadImage(path+imgs[i]);
@@ -36,17 +47,27 @@ function loadImages(element) {
         let tree = document.createDocumentFragment();
 
         imgs.forEach(function (img) {
-            divChild = document.createElement('img');
+            divChild = document.createElement('div');
             divChild.setAttribute('class', 'lightbox-img');
-            divChild.setAttribute('src',path+img);
+            divChild.setAttribute('style','background-image: url(../'+path+img+')');
+            hiddenChild = document.createElement('img');
+            hiddenChild.setAttribute('class', 'lightbox-img-hidden');
+            hiddenChild.setAttribute('src',path+img);
+            tree.appendChild(hiddenChild);
             tree.appendChild(divChild);
         });
 
         lightbox.appendChild(tree);
 
-        imagesHTML = document.getElementsByClassName('lightbox-img');
+        if (window.innerWidth >= 1200) {
+            imagesHTML = document.getElementsByClassName('lightbox-img');
+            imageshidden = document.getElementsByClassName('lightbox-img-hidden');
+        } else {
+            imagesHTML = document.getElementsByClassName('lightbox-img-hidden');
+        }
+
         numImages = imagesHTML.length;
-        
+
         topZ = 2;
         currentImage = 0;
 
@@ -57,6 +78,42 @@ function loadImages(element) {
         imagesHTML[0].style.zIndex = topZ;
         imagesHTML[0].id = 'selected';
 
+        if (window.innerWidth >= 1200) {
+            imageshidden[0].id = 'selected';
+
+            let referenceImage = $('.lightbox-img-hidden#selected');
+            imgHeight = referenceImage.height();
+            imgWidth = referenceImage.width();
+            imgNaturalWidth = referenceImage.get(0).naturalWidth;
+            imgNaturalHeight = referenceImage.get(0).naturalHeight;
+            imgTop = referenceImage.offset()['top'] - borderThickness;
+            imgLeft = referenceImage.offset()['left'] - borderThickness;
+            maxScale = imgNaturalHeight / imgHeight;
+
+            let selectedImage = $('.lightbox-img#selected');
+            selectedImage.css({height:imgHeight,width:imgWidth,backgroundSize:imgWidth+"px "+imgHeight+"px"});
+
+            selectedImage.mousemove(function(e) {
+                if (maxScale > 1) {
+                    $this = $(this);
+                    Xpx = e.pageX - imgLeft - borderThickness;
+                    Ypx = e.pageY - imgTop - borderThickness;
+                    let X = 100*Xpx/$this.width();
+                    let Y = 100*Ypx/$this.height();
+                    if (X >= 0 && X <= 100 && Y >= 0 && Y <= 100) {
+                        $this.css({backgroundSize:imgNaturalWidth+"px "+imgNaturalHeight+"px",backgroundPosition:X+"% "+Y+"%",transition:"background-size 0.6s"});
+                    } else {
+                        $this.css({backgroundSize:imgWidth+"px "+imgHeight+"px",transition:"background-size 0.6s"});
+                    }
+                }
+            });
+
+            selectedImage.mouseleave(function() {
+                if (maxScale > 1) {
+                    $(this).css({backgroundSize:imgWidth+"px "+imgHeight+"px",transition:"background-size 0.6s"});
+                }
+            });
+        }
 
         if (numImages > 1) {
             prevbtn.style.display = 'unset';
@@ -87,30 +144,30 @@ function loadImages(element) {
 
         // Swipe listener
 
-        var start = null;
-        lightbox.addEventListener("touchstart",function(event){
-            if(event.touches.length === 1 && numImages > 1){
-                //just one finger touched
-                start = event.touches.item(0).clientX;
-            }else{
-                //a second finger hit the screen, abort the touch
-                start = null;
-            }
-        });
+        // var start = null;
+        // lightbox.addEventListener("touchstart",function(event){
+        //     if(event.touches.length === 1 && numImages > 1){
+        //         //just one finger touched
+        //         start = event.touches.item(0).clientX;
+        //     }else{
+        //         //a second finger hit the screen, abort the touch
+        //         start = null;
+        //     }
+        // });
 
-        lightbox.addEventListener("touchend",function(event){
-            var offset = 100;//at least 100px are a swipe
-            if(start){
-                //the only finger that hit the screen left it
-                var end = event.changedTouches.item(0).clientX;
-                if(end > start + offset){
-                    prevbtn.click();
-                }
-                if(end < start - offset ){
-                    nextbtn.click();
-                }
-            }
-        });
+        // lightbox.addEventListener("touchend",function(event){
+        //     var offset = 100;//at least 100px are a swipe
+        //     if(start){
+        //         //the only finger that hit the screen left it
+        //         var end = event.changedTouches.item(0).clientX;
+        //         if(end > start + offset){
+        //             prevbtn.click();
+        //         }
+        //         if(end < start - offset ){
+        //             nextbtn.click();
+        //         }
+        //     }
+        // });
 
 
         return;
@@ -145,6 +202,8 @@ function transition(speed,first,nextImage) {
 async function changeImage(element,speed) { 
 
     if (numImages > 1 && parseFloat(imagesHTML[currentImage].style.opacity) == 1) {
+
+        let imgLeft, imgTop, imgWidth, imgHeight, maxScale, imgNaturalWidth, imgNaturalHeight;
         
         let nextImage;
         if (element.id == "next") {
@@ -158,11 +217,55 @@ async function changeImage(element,speed) {
         imagesHTML[nextImage].style.zIndex = topZ;
         imagesHTML[currentImage].style.zIndex = topZ - 1;
 
+        if (window.innerWidth >= 1200) {
+            imagesHTML[nextImage].id = "transitioning";
+            imageshidden[nextImage].id = "transitioning";
+
+            transitioningImage = $('.lightbox-img-hidden#transitioning');
+            imgHeight = transitioningImage.height();
+            imgWidth = transitioningImage.width();
+            imgNaturalWidth = transitioningImage.get(0).naturalWidth;
+            imgNaturalHeight = transitioningImage.get(0).naturalHeight;
+            imgTop = transitioningImage.offset()['top'] - borderThickness;
+            imgLeft = transitioningImage.offset()['left'] - borderThickness;
+            maxScale = imgNaturalHeight / imgHeight;
+
+            $('.lightbox-img#transitioning').css({height:imgHeight,width:imgWidth,backgroundSize:imgWidth+"px "+imgHeight+"px"});
+        }
+
         await transition(speed,false,nextImage); 
 
         $('.lightbox-img').removeAttr('id');
         imagesHTML[nextImage].id = "selected"
         imagesHTML[currentImage].style.zIndex = 'unset';
+
+        if (window.innerWidth >= 1200) {
+
+            $('.lightbox-img-hidden').removeAttr('id');
+
+            let selectedImage = $('.lightbox-img#selected');
+
+            selectedImage.mousemove(function(e) {
+                if (maxScale > 1) {
+                    $this = $(this);
+                    Xpx = e.pageX - imgLeft - borderThickness;
+                    Ypx = e.pageY - imgTop - borderThickness;
+                    let X = 100*Xpx/$this.width();
+                    let Y = 100*Ypx/$this.height();
+                    if (X >= 0 && X <= 100 && Y >= 0 && Y <= 100) {
+                        $this.css({backgroundSize:imgNaturalWidth+"px "+imgNaturalHeight+"px",backgroundPosition:X+"% "+Y+"%",transition:"background-size 0.6s"});
+                    } else {
+                        $this.css({backgroundSize:imgWidth+"px "+imgHeight+"px",transition:"background-size 0.6s"});
+                    }
+                }
+            });
+
+            selectedImage.mouseleave(function() {
+                if (maxScale > 1) {
+                    $(this).css({backgroundSize:imgWidth+"px "+imgHeight+"px",transition:"background-size 0.6s"});
+                }
+            });
+        }
 
         currentImage = nextImage;
     }
@@ -173,8 +276,10 @@ async function changeImage(element,speed) {
 
 function removeImages() {
     imagesHTML = document.getElementsByClassName('lightbox-img');
+    imageshidden = document.getElementsByClassName('lightbox-img-hidden');
     for (let i=imagesHTML.length-1; i>=0; i--) {
         imagesHTML[i].remove();
+        imageshidden[i].remove();
     }
     prevbtn.style.display = 'none';
     nextbtn.style.display = 'none';
