@@ -243,6 +243,10 @@ a {
     padding: 20px;
 }
 
+#websiteby {
+    font-size: 16px;
+}
+
 .left {
     font-size: 16px;
     padding: 3%;
@@ -273,6 +277,9 @@ a {
 .image#flower {
     background-image: url(../melb/melb09.jpg);
 }
+.image#flower2 {
+    background-image: url(../melb/melb39.jpg);
+}
 
 
 /* Extra small devices (phones, 600px and down) */
@@ -299,6 +306,9 @@ a {
     }
     .image#flower {
         background-image: url(../melb/melb09_small.jpg);
+    }
+    .image#flower2 {
+        background-image: url(../melb/melb39_small.jpg);
     }
 
     .heading #heart {
@@ -355,7 +365,7 @@ a {
 @media only screen and (min-width: 769px) {
 
     section.text {
-        padding: 50px 15% 50px 15%;
+        padding: 50px 20% 50px 20%;
     }
 
     div.heading {
@@ -382,7 +392,7 @@ a {
 @media only screen and (min-width: 1200px) {
 
     section.text {
-        padding: 50px 20% 50px 20%;
+        padding: 50px 25% 50px 25%;
     }
 
     .text.flex {
@@ -395,6 +405,10 @@ a {
 
     .left {
         font-size: 18px;
+    }
+
+    #acknowledgement {
+        padding: 50px 30% 50px 30%;
     }
 
 }
