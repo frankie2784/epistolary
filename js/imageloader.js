@@ -12,29 +12,29 @@ function preloadImage(url) {
 }
 
 function loadImages(element) {
-    let divChild, hiddenChild;
-    let imgs;
-    let imgLeft, imgTop, imgWidth, imgHeight, maxScale, imgNaturalWidth, imgNaturalHeight;
-    imagesHTML = document.getElementsByClassName('lightbox-img');
-    imageshidden = document.getElementsByClassName('lightbox-img-hidden');
-    for (let i=imagesHTML.length-1; i>=0; i--) {
-        imagesHTML[i].remove();
-        imageshidden[i].remove();
-    }
+    loadJSON(async function(response) {
+        // Parsing JSON string into object
+        let markersjson = JSON.parse(response);
 
-    $('label').css({"visibility":"hidden"});
-    $('.header').css({"visibility":"hidden"});
-    $('.header-text').css({"visibility":"visible"});
+        let divChild, hiddenChild;
+        let imgs;
+        let imgLeft, imgTop, imgWidth, imgHeight, maxScale, imgNaturalWidth, imgNaturalHeight;
+        imagesHTML = document.getElementsByClassName('lightbox-img');
+        imageshidden = document.getElementsByClassName('lightbox-img-hidden');
+        for (let i=imagesHTML.length-1; i>=0; i--) {
+            imagesHTML[i].remove();
+            imageshidden[i].remove();
+        }
+    
+        $('label').css({"visibility":"hidden"});
+        $('.header').css({"visibility":"hidden"});
+        $('.header-text').css({"visibility":"visible"});
 
-    d3.json(
-    'letters.json',
-    async function (err, markersjson) {
-        if (err) throw err;
         let letter = markersjson.filter(function(d){
             return d.id == element.id;
           });
         
-        if (window.innerWidth >= 769) {
+        if (!isTouchDevice()) {
             imgs = letter[0].images;
         } else {
             imgs = letter[0].images_small;
@@ -46,7 +46,7 @@ function loadImages(element) {
 
         let tree = document.createDocumentFragment();
 
-        imgs.forEach(function (img) {
+        imgs.forEach(function(img) {
             divChild = document.createElement('div');
             divChild.setAttribute('class', 'lightbox-img');
             divChild.setAttribute('style','background-image: url(../'+path+img+')');
@@ -59,7 +59,7 @@ function loadImages(element) {
 
         lightbox.appendChild(tree);
 
-        if (window.innerWidth >= 1200) {
+        if (!isTouchDevice()) {
             imagesHTML = document.getElementsByClassName('lightbox-img');
             imageshidden = document.getElementsByClassName('lightbox-img-hidden');
         } else {
@@ -78,7 +78,7 @@ function loadImages(element) {
         imagesHTML[0].style.zIndex = topZ;
         imagesHTML[0].id = 'selected';
 
-        if (window.innerWidth >= 1200) {
+        if (!isTouchDevice()) {
             imageshidden[0].id = 'selected';
 
             let referenceImage = $('.lightbox-img-hidden#selected');
@@ -120,7 +120,7 @@ function loadImages(element) {
             nextbtn.style.display = 'unset';
         }
 
-        await transition(0.01,true,0);
+        await transition(0.01,0);
 
         //Key listener
 
@@ -141,42 +141,11 @@ function loadImages(element) {
                     break;
             }
         };
-
-        // Swipe listener
-
-        // var start = null;
-        // lightbox.addEventListener("touchstart",function(event){
-        //     if(event.touches.length === 1 && numImages > 1){
-        //         //just one finger touched
-        //         start = event.touches.item(0).clientX;
-        //     }else{
-        //         //a second finger hit the screen, abort the touch
-        //         start = null;
-        //     }
-        // });
-
-        // lightbox.addEventListener("touchend",function(event){
-        //     var offset = 100;//at least 100px are a swipe
-        //     if(start){
-        //         //the only finger that hit the screen left it
-        //         var end = event.changedTouches.item(0).clientX;
-        //         if(end > start + offset){
-        //             prevbtn.click();
-        //         }
-        //         if(end < start - offset ){
-        //             nextbtn.click();
-        //         }
-        //     }
-        // });
-
-
         return;
     });
-
-    
 }
 
-function transition(speed,first,nextImage) { 
+function transition(speed,nextImage) { 
     return new Promise((resolve) => { 
 
         let del = speed;
@@ -217,7 +186,7 @@ async function changeImage(element,speed) {
         imagesHTML[nextImage].style.zIndex = topZ;
         imagesHTML[currentImage].style.zIndex = topZ - 1;
 
-        if (window.innerWidth >= 1200) {
+        if (!isTouchDevice()) {
             imagesHTML[nextImage].id = "transitioning";
             imageshidden[nextImage].id = "transitioning";
 
@@ -233,13 +202,13 @@ async function changeImage(element,speed) {
             $('.lightbox-img#transitioning').css({height:imgHeight,width:imgWidth,backgroundSize:imgWidth+"px "+imgHeight+"px"});
         }
 
-        await transition(speed,false,nextImage); 
+        await transition(speed,nextImage); 
 
         $('.lightbox-img').removeAttr('id');
         imagesHTML[nextImage].id = "selected"
         imagesHTML[currentImage].style.zIndex = 'unset';
 
-        if (window.innerWidth >= 1200) {
+        if (!isTouchDevice()) {
 
             $('.lightbox-img-hidden').removeAttr('id');
 
@@ -305,4 +274,21 @@ $(document).ready(function () {
     });
 });
 
+function loadJSON(callback) {   
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'letters.json', true); // Replace 'appDataServices' with the path to your file
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+          }
+    };
+    xobj.send(null);  
+}
 
+function isTouchDevice() {
+    return (('ontouchstart' in window) ||
+       (navigator.maxTouchPoints > 0) ||
+       (navigator.msMaxTouchPoints > 0));
+  }

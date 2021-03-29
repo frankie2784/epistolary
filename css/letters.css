@@ -995,6 +995,10 @@
         width: 85%;
     }
 
+}
+
+@media only screen and (hover: hover) {
+    
     .lightbox-img-hidden {
         visibility: hidden;
     }
@@ -1011,5 +1015,4 @@
         top: 0;
         margin: auto;
     }
-
 }

@@ -36,6 +36,8 @@ map.on('load', function () {
   map.touchZoomRotate.disableRotation();
 });
 
+loadmap();
+
 // Add geolocate control to the map.
 // var geolocate = new mapboxgl.GeolocateControl({
 //   positionOptions: {
@@ -51,77 +53,68 @@ map.on('load', function () {
 //   userCoords = new mapboxgl.LngLat(e.coords.longitude, e.coords.latitude);;
 // }
 
-d3.json(
-'letters.json',
-function (err, markersjson) {
-if (err) throw err;
 
+
+
+function closePopup() {
+  $('.popup-close').css({backgroundColor: '#d3e0e9', boxShadow: '0px 0px 0px var(--grey)'})
+  setTimeout(function() {
+    $('.letters-landing').hide();
+  }, 500);
+}
+
+function positionHighlight(coords) {
+  let pixels = map.project(coords);
+  if (window.innerWidth > window.innerHeight || window.innerWidth >= 769) {
+    $('.letter-highlight').css({"transition":"unset","top":pixels['y'].toString()+'px',"left":pixels['x'].toString()+"px"});
+  } else {
+    $('.letter-highlight').css({"top":"unset","left":"unset"});
+  }
+}
+
+function loadJSON(callback) {   
+  var xobj = new XMLHttpRequest();
+      xobj.overrideMimeType("application/json");
+  xobj.open('GET', 'letters.json', true); // Replace 'appDataServices' with the path to your file
+  xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+          // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+          callback(xobj.responseText);
+        }
+  };
+  xobj.send(null);  
+}
+
+function loadmap() {
+  loadJSON(function(response) {
+  // Parsing JSON string into object
+  let markersjson = JSON.parse(response);
   markersjson.forEach(function (marker) {
   // create a DOM element for the marker
 
-    let el = document.createElement('div');
-    el.className = 'marker';
-    el.id = marker.id;
-    el.style.backgroundImage =
-    'url(img/heart_pink_map.png)';
-    el.style.backgroundSize =
-    'cover';
-    el.style.width = '51px';
-    el.style.height = '48px';
+  let el = document.createElement('div');
+  el.className = 'marker';
+  el.id = marker.id;
+  el.style.backgroundImage =
+  'url(img/heart_pink_map.png)';
+  el.style.backgroundSize =
+  'cover';
+  el.style.width = '51px';
+  el.style.height = '48px';
 
-    let coords = marker.coordinates;
+  let coords = marker.coordinates;
 
-    // add marker to map
-    let new_marker = new mapboxgl.Marker(el, {
-      offset: [0, -29]
-    })
-    .setLngLat(coords)
-    .addTo(map);
+  // add marker to map
+  let new_marker = new mapboxgl.Marker(el, {
+    offset: [0, -29]
+  })
+  .setLngLat(coords)
+  .addTo(map);
 
-    $(document).ready(function() {
-
-      // let _watch = null;
-      // let intervalId = setInterval(function() {
-      //     if ( _watch !== userCoords ) {
-      //         _watch = userCoords;
-      //         let distanceText;
-      //         if (userCoords) {
-      //           let markerCoords = new mapboxgl.LngLat(coords[0],coords[1]);
-      //           let dist = userCoords.distanceTo(markerCoords);
-      //           if (dist > 1000) {
-      //             distanceText = (dist / 1000).toFixed(1)+'km';
-      //           } else {
-      //             distanceText = ((dist / 10).toFixed(0) * 10)+'m'
-      //           }
-      //         } else {
-      //           distanceText = "";
-      //         }
-
-      //         $.fn.displayDistance = function() { 
-      //           return $(this).text(distanceText);
-      //         }
-        
-      //         $('.letterbox .distance#'+marker.id).displayDistance();
-
-      //         clearInterval(intervalId);
-      //     }
-      // }, 1000);
+  $(document).ready(function() {
 
       $(el).hover(function(event) {
         event.preventDefault();
-
-        // let distanceText;
-        // if (userCoords) {
-        //   let markerCoords = new mapboxgl.LngLat(coords[0],coords[1]);
-        //   let dist = userCoords.distanceTo(markerCoords);
-        //   if (dist > 1000) {
-        //     distanceText = (dist / 1000).toFixed(1)+'km';
-        //   } else {
-        //     distanceText = ((dist / 10).toFixed(0) * 10)+'m'
-        //   }
-        // } else {
-        //   distanceText = "";
-        // }
 
         $(el).append('<a class="heart-highlight" id="'+marker.id+'" href="#lightbox" onClick="return loadImages(this)"></a>');
         let pixels = map.project(coords);
@@ -148,19 +141,6 @@ if (err) throw err;
       $(window).on('touchend',function(event) {
         if ($(event.target).closest(el).length) {
           event.preventDefault();
-
-          // let distanceText;
-          // if (userCoords) {
-          //   let markerCoords = new mapboxgl.LngLat(coords[0],coords[1]);
-          //   let dist = userCoords.distanceTo(markerCoords);
-          //   if (dist > 1000) {
-          //     distanceText = (dist / 1000).toFixed(1)+'km';
-          //   } else {
-          //     distanceText = ((dist / 10).toFixed(0) * 10)+'m'
-          //   }
-          // } else {
-          //   distanceText = "";
-          // }
           
           $('.letter-highlight').css("display", "flex").hide().fadeIn(200);
           positionHighlight(coords);
@@ -198,19 +178,4 @@ if (err) throw err;
     });
   });
 });
-
-function closePopup() {
-  $('.popup-close').css({backgroundColor: '#d3e0e9', boxShadow: '0px 0px 0px var(--grey)'})
-  setTimeout(function() {
-    $('.letters-landing').hide();
-  }, 500);
-}
-
-function positionHighlight(coords) {
-  let pixels = map.project(coords);
-  if (window.innerWidth > window.innerHeight || window.innerWidth >= 769) {
-    $('.letter-highlight').css({"transition":"unset","top":pixels['y'].toString()+'px',"left":pixels['x'].toString()+"px"});
-  } else {
-    $('.letter-highlight').css({"top":"unset","left":"unset"});
-  }
 }
