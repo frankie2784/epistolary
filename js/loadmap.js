@@ -3,7 +3,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbmtpZTI3ODQiLCJhIjoiY2tnbGdtZzd0MmY2djJ5b
 // Set bounds to Victoria
 var bounds = [
 [138.455243,-40.074262], // Southwest coordinates
-[153.550458,-33.784141], // Northeast coordinates
+[151.550458,-30.784141], // Northeast coordinates
 ];
 
 var melb_bounds = [
@@ -90,92 +90,94 @@ function loadmap() {
   // Parsing JSON string into object
   let markersjson = JSON.parse(response);
   markersjson.forEach(function (marker) {
-  // create a DOM element for the marker
+    // create a DOM element for the marker
 
-  let el = document.createElement('div');
-  el.className = 'marker';
-  el.id = marker.id;
-  el.style.backgroundImage =
-  'url(img/heart_pink_map.png)';
-  el.style.backgroundSize =
-  'cover';
-  el.style.width = '51px';
-  el.style.height = '48px';
+    let el = document.createElement('div');
+    el.className = 'marker';
+    el.id = marker.id;
+    el.style.backgroundImage =
+    'url(img/heart_pink_map.png)';
+    el.style.backgroundSize =
+    'cover';
+    el.style.width = '51px';
+    el.style.height = '48px';
 
-  let coords = marker.coordinates;
+    let coords = marker.coordinates;
 
-  // add marker to map
-  let new_marker = new mapboxgl.Marker(el, {
-    offset: [0, -29]
-  })
-  .setLngLat(coords)
-  .addTo(map);
+    // add marker to map
+    let new_marker = new mapboxgl.Marker(el, {
+      offset: [0, -29]
+    })
+    .setLngLat(coords)
+    .addTo(map);
 
-  $(document).ready(function() {
+    // markerbounds.push(new_marker);
 
-      $(el).hover(function(event) {
-        event.preventDefault();
+    $(document).ready(function() {
 
-        $(el).append('<a class="heart-highlight" id="'+marker.id+'" href="#lightbox" onClick="return loadImages(this)"></a>');
-        let pixels = map.project(coords);
-        $('#letter-text-title').text(marker.title);
-        $('#letter-text-from').text(marker.from);
-        $('.letter-image').css({"background-image":'url('+path+marker.images[0]+')','transform':'blur(2px)'});
-        $('.marker').css({"background-image":'url(img/heart_pink_map.png)',"z-index":"unset"});
-        $(el).css({'background-image':'url(img/heart_blue_map.png)',"z-index":"1"});
-
-        $('.letter-highlight').css("display", "flex").hide().fadeIn(200);
-        positionHighlight(coords);
-
-        map.on('move', function() {
-          positionHighlight(coords);
-        });
-
-      }, function() {
-        $('.letter-highlight').hide();
-        $(".heart-highlight").remove();
-        $(el).css({"background-image":"url(img/heart_pink_map.png)", "z-index":"unset"});
-      });
-
-
-      $(window).on('touchend',function(event) {
-        if ($(event.target).closest(el).length) {
+        $(el).hover(function(event) {
           event.preventDefault();
-          
-          $('.letter-highlight').css("display", "flex").hide().fadeIn(200);
-          positionHighlight(coords);
-          $('.letter-highlight').attr("id", marker.id);
-          $('.divLink-highlight').attr("id", marker.id);
+
+          $(el).append('<a class="heart-highlight" id="'+marker.id+'" href="#lightbox" onClick="return loadImages(this)"></a>');
+          let pixels = map.project(coords);
           $('#letter-text-title').text(marker.title);
           $('#letter-text-from').text(marker.from);
-          $('.letter-image').css({'background-image':'url(../letters/'+marker.images[0]+')'});
+          $('.letter-image').css({"background-image":'url('+path+marker.images[0]+')','transform':'blur(2px)'});
           $('.marker').css({"background-image":'url(img/heart_pink_map.png)',"z-index":"unset"});
           $(el).css({'background-image':'url(img/heart_blue_map.png)',"z-index":"1"});
 
-          window.addEventListener('resize', function () {
-            positionHighlight(coords);
-          });
+          $('.letter-highlight').css("display", "flex").hide().fadeIn(200);
+          positionHighlight(coords);
 
           map.on('move', function() {
             positionHighlight(coords);
           });
 
-        } else if (!$(event.target).closest('.divLink-highlight').length && !$(event.target).closest('.marker').length) {
-          $('.letter-highlight#'+marker.id).hide();
-          $('.divLink-highlight').removeAttr("id");
+        }, function() {
+          $('.letter-highlight').hide();
+          $(".heart-highlight").remove();
           $(el).css({"background-image":"url(img/heart_pink_map.png)", "z-index":"unset"});
-        }
-      });
+        });
 
-      $(".divLink").hover(function(event) {
-        event.preventDefault();
 
-        if (this.id == el.id && window.innerWidth > window.innerHeight) {
-          $(el).css({"background-image":"url(img/heart_blue_map.png)", "z-index":"1"});}}, function() {
-        if (this.id == el.id && window.innerWidth > window.innerHeight) {
-          $(el).css({"background-image":"url(img/heart_pink_map.png)", "z-index":"unset"});}
+        $(window).on('touchend',function(event) {
+          if ($(event.target).closest(el).length) {
+            event.preventDefault();
+            
+            $('.letter-highlight').css("display", "flex").hide().fadeIn(200);
+            positionHighlight(coords);
+            $('.letter-highlight').attr("id", marker.id);
+            $('.divLink-highlight').attr("id", marker.id);
+            $('#letter-text-title').text(marker.title);
+            $('#letter-text-from').text(marker.from);
+            $('.letter-image').css({'background-image':'url(../letters/'+marker.images[0]+')'});
+            $('.marker').css({"background-image":'url(img/heart_pink_map.png)',"z-index":"unset"});
+            $(el).css({'background-image':'url(img/heart_blue_map.png)',"z-index":"1"});
+
+            window.addEventListener('resize', function () {
+              positionHighlight(coords);
+            });
+
+            map.on('move', function() {
+              positionHighlight(coords);
+            });
+
+          } else if (!$(event.target).closest('.divLink-highlight').length && !$(event.target).closest('.marker').length) {
+            $('.letter-highlight#'+marker.id).hide();
+            $('.divLink-highlight').removeAttr("id");
+            $(el).css({"background-image":"url(img/heart_pink_map.png)", "z-index":"unset"});
+          }
+        });
+
+        $(".divLink").hover(function(event) {
+          event.preventDefault();
+
+          if (this.id == el.id && window.innerWidth > window.innerHeight) {
+            $(el).css({"background-image":"url(img/heart_blue_map.png)", "z-index":"1"});}}, function() {
+          if (this.id == el.id && window.innerWidth > window.innerHeight) {
+            $(el).css({"background-image":"url(img/heart_pink_map.png)", "z-index":"unset"});}
+        });
       });
-    });
   });
 });
 }
