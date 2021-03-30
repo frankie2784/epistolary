@@ -119,5 +119,16 @@
     "images": ["lisacarroll_1.jpg","lisacarroll_2.jpg","lisacarroll_3.jpg","lisacarroll_4.jpg"],
     "description": "",
     "coordinates": [142.8825176,-35.0445920]
+    },
+    {
+    "id": "letter12",
+    "title": "Dear Nonna and Nonno's house...",
+    "author": "Sarah Di Martino",
+    "from": "With love, from Sara",
+    "icon": "",
+    "images_small": ["sarahdimartino_small_1.jpg"],
+    "images": ["sarahdimartino_1.jpg"],
+    "description": "",
+    "coordinates": [144.69415878645972,-37.866752212605135]
     }
 ]
