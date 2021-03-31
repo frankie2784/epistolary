@@ -130,5 +130,16 @@
     "images": ["sarahdimartino_1.jpg"],
     "description": "",
     "coordinates": [144.69415878645972,-37.866752212605135]
+    },
+    {
+    "id": "letter13",
+    "title": "Dear Melbourne, 3 times my city...",
+    "author": "Danica Violet",
+    "from": "With love, from Sweet D",
+    "icon": "",
+    "images_small": ["danicaviolet_small_1.jpg","danicaviolet_small_2.jpg","danicaviolet_small_3.jpg","danicaviolet_small_4.jpg"],
+    "images": ["danicaviolet_1.jpg","danicaviolet_2.jpg","danicaviolet_3.jpg","danicaviolet_4.jpg"],
+    "description": "",
+    "coordinates": [145.277794,-37.879362]
     }
 ]
