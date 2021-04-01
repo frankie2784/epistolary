@@ -4,142 +4,139 @@
     "title": "Dear place...",
     "author": "rute chaves",
     "from": "Love r.",
-    "icon": "",
     "images_small": ["rutechaves_small_1.jpg","rutechaves_small_2.gif","rutechaves_small_3.jpg","rutechaves_small_4.jpg","rutechaves_small_5.jpg"],
     "images": ["rutechaves_1.jpg","rutechaves_2.gif","rutechaves_3.jpg","rutechaves_4.jpg","rutechaves_5.jpg"],
-    "description": "",
-    "coordinates": [144.9577778, -37.7790556]
+    "captions": [],
+    "coordinates": [-37.7790556, 144.9577778]
     },
     {
     "id": "letter2",
     "title": "Dear Eastern Freeway...",
     "author": "Sierra Verity-Beasley",
     "from": "The girl from the Eastern Suburbs",
-    "icon": "",
     "images_small": ["sierraveritybeasley_small_1.jpg"],
     "images": ["sierraveritybeasley_1.jpg"],
-    "description": "",
-    "coordinates": [145.0149406436627,-37.7910456306492]
+    "captions": [],
+    "coordinates": [-37.7910456306492,145.0149406436627]
     },
     {
     "id": "letter3",
     "title": "Dear small corner of Hawthorn East...",
     "author": "Amandine Thomas",
     "from": "Love Amandine",
-    "icon": "",
     "images_small": ["amandinethomas_small_1.jpg","amandinethomas_small_2.jpg"],
     "images": ["amandinethomas_1.jpg","amandinethomas_2.jpg"],
-    "description": "",
-    "coordinates": [145.046064640029,-37.82865310806947]
+    "captions": [],
+    "coordinates": [-37.82865310806947,145.046064640029]
     },
     {
     "id": "letter4",
     "title": "Dear Melbourne...",
     "author": "Tarryn Handcock & rute chaves",
     "from": "Love Tarryn & rute",
-    "icon": "",
     "images_small": ["tarrynhandcock_small_1.jpg","tarrynhandcock_small_2.jpg","tarrynhandcock_small_3.jpg","tarrynhandcock_4.jpg","tarrynhandcock_small_5.jpg","tarrynhandcock_small_6.jpg"],
     "images": ["tarrynhandcock_1.jpg","tarrynhandcock_2.jpg","tarrynhandcock_3.jpg","tarrynhandcock_4.jpg","tarrynhandcock_5.jpg","tarrynhandcock_6.jpg"],
-    "description": "",
-    "coordinates": [144.95924227295765,-37.81741479958219]
+    "captions": [],
+    "coordinates": [-37.81741479958219,144.95924227295765]
     },
     {
     "id": "letter5",
     "title": "Dear K...",
     "author": "Sean Ryan",
     "from": "Your S",
-    "icon": "",
     "images_small": ["seanryan_1.jpg","seanryan_2.jpg","seanryan_small_3.jpg"],
     "images": ["seanryan_1.jpg","seanryan_2.jpg","seanryan_3.jpg"],
-    "description": "",
-    "coordinates": [144.9651640607231,-37.81199092768334]
+    "captions": [],
+    "coordinates": [-37.81199092768334,144.9651640607231]
     },
     {
     "id": "letter6",
     "title": "Dear Melbourne...",
     "author": "Alice Lewis",
     "from": "Love Alice",
-    "icon": "",
     "images_small": ["alicelewis_small_1.jpg"],
     "images": ["alicelewis_1.jpg"],
-    "description": "",
-    "coordinates": [144.963269972722031,-37.81355329951707]
+    "captions": [],
+    "coordinates": [-37.81355329951707,144.963269972722031]
     },
     {
     "id": "letter7",
     "title": "At the edge of the Yarra River during Moomba Carnival...",
     "author": "Ren Gregorčič",
     "from": "Love Ren",
-    "icon": "",
     "images_small": ["rengregorcic_small_1.jpg"],
     "images": ["rengregorcic_1.jpg"],
-    "description": "",
-    "coordinates": [144.9710278,-37.8203611]
+    "captions": [],
+    "coordinates": [-37.8203611,144.9710278]
     },
     {
     "id": "letter8",
     "title": "Dear Testing Grounds...",
     "author": "Millie Cattlin and Joseph Norster",
     "from": "Love Millie & Joseph",
-    "icon": "",
     "images_small": ["milliecattlin_1.jpg","milliecattlin_2.jpg","milliecattlin_3.jpg","milliecattlin_4.jpg","milliecattlin_5.jpg","milliecattlin_6.jpg"],
     "images": ["milliecattlin_1.jpg","milliecattlin_2.jpg","milliecattlin_3.jpg","milliecattlin_4.jpg","milliecattlin_5.jpg","milliecattlin_6.jpg"],
-    "description": "",
-    "coordinates": [144.9676853730152,-37.82068594759646]
+    "captions": [],
+    "coordinates": [-37.82068594759646,144.9676853730152]
     },
     {
     "id": "letter9",
     "title": "Dearest Darebin...",
     "author": "Michael Gill",
     "from": "Love Michael",
-    "icon": "",
     "images_small": ["michaelgill_small_1.jpg"],
     "images": ["michaelgill_1.jpg"],
-    "description": "",
-    "coordinates": [145.03356136617379,-37.772949410066154]
+    "captions": [],
+    "coordinates": [-37.772949410066154,145.03356136617379]
     },
     {
     "id": "letter10",
     "title": "Dear Wellington Street...",
     "author": "Alice Whitmore",
     "from": "Love A.",
-    "icon": "",
     "images_small": ["alicewhitmore_1.jpg","alicewhitmore_small_2.jpg"],
     "images": ["alicewhitmore_1.jpg","alicewhitmore_2.jpg"],
-    "description": "",
-    "coordinates": [144.98763385196406,-37.796310292623]
+    "captions": [],
+    "coordinates": [-37.796310292623,144.98763385196406]
     },
     {
     "id": "letter11",
     "title": "my hometown...",
     "author": "Lisa Carroll",
     "from": "Love the one from the edge of town",
-    "icon": "",
     "images_small": ["lisacarroll_small_1.jpg","lisacarroll_small_2.jpg","lisacarroll_small_3.jpg","lisacarroll_small_4.jpg"],
     "images": ["lisacarroll_1.jpg","lisacarroll_2.jpg","lisacarroll_3.jpg","lisacarroll_4.jpg"],
-    "description": "",
-    "coordinates": [142.8825176,-35.0445920]
+    "captions": [],
+    "coordinates": [-35.0445920,142.8825176]
     },
     {
     "id": "letter12",
     "title": "Dear Nonna and Nonno's house...",
     "author": "Sarah Di Martino",
     "from": "With love, from Sara",
-    "icon": "",
     "images_small": ["sarahdimartino_small_1.jpg"],
     "images": ["sarahdimartino_1.jpg"],
-    "description": "",
-    "coordinates": [144.69415878645972,-37.866752212605135]
+    "captions": [],
+    "coordinates": [-37.866752212605135,144.69415878645972]
     },
     {
     "id": "letter13",
     "title": "Dear Melbourne, 3 times my city...",
     "author": "Danica Violet",
     "from": "With love, from Sweet D",
-    "icon": "",
     "images_small": ["danicaviolet_small_1.jpg","danicaviolet_small_2.jpg","danicaviolet_small_3.jpg","danicaviolet_small_4.jpg"],
     "images": ["danicaviolet_1.jpg","danicaviolet_2.jpg","danicaviolet_3.jpg","danicaviolet_4.jpg"],
-    "description": "",
-    "coordinates": [145.277794,-37.879362]
+    "captions": ["","Nighttime in 35mm","Bby you're an icon","Stylish travel"],
+    "coordinates": [-37.879362,145.277794]
+    },
+    {
+    "id": "letter14",
+    "title": "Dear Murray River...",
+    "author": "Nicole Rutherford",
+    "from": "All my love, Nicole",
+    "images_small": ["nicolerutherford_small_1.jpg"],
+    "images": ["nicolerutherford_1.jpg"],
+    "captions": [],
+    "coordinates": [-34.20665758405628, 142.13633337710723]
     }
 ]

@@ -22,10 +22,6 @@ maxBounds: bounds
 
 // var userCoords = null;
 
-function randomInterval(min, max) { // min and max included 
-  return Math.random() * (max - min) + min;
-}
-
 map.on('load', function () {
   $('.topsplit').get(0).scrollIntoView();
   $(".letters-map").css({visibility:"visible"});
@@ -102,7 +98,7 @@ function loadmap() {
     el.style.width = '51px';
     el.style.height = '48px';
 
-    let coords = marker.coordinates;
+    let coords = [marker.coordinates[1], marker.coordinates[0]];
 
     // add marker to map
     let new_marker = new mapboxgl.Marker(el, {
@@ -119,7 +115,6 @@ function loadmap() {
           event.preventDefault();
 
           $(el).append('<a class="heart-highlight" id="'+marker.id+'" href="#lightbox" onClick="return loadImages(this)"></a>');
-          let pixels = map.project(coords);
           $('#letter-text-title').text(marker.title);
           $('#letter-text-from').text(marker.from);
           $('.letter-image').css({"background-image":'url('+path+marker.images[0]+')','transform':'blur(2px)'});
