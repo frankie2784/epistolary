@@ -96,7 +96,7 @@ function loadmap() {
 			let el = document.createElement("div");
 			el.className = "marker";
 			el.id = marker.id;
-			el.style.backgroundImage = "url(img/heart_pink_map.png)";
+			el.style.backgroundImage = "url(../img/heart_pink_map.png)";
 			el.style.backgroundSize = "cover";
 			el.style.width = "51px";
 			el.style.height = "48px";
@@ -126,15 +126,17 @@ function loadmap() {
 						$("#letter-text-from").text(marker.from);
 						$(".letter-image").css({
 							"background-image":
-								"url(" + path + marker.images[0] + ")",
+								"url(../" + path + marker.thumb + ")",
 							transform: "blur(2px)",
 						});
 						$(".marker").css({
-							"background-image": "url(img/heart_pink_map.png)",
+							"background-image":
+								"url(../img/heart_pink_map.png)",
 							"z-index": "unset",
 						});
 						$(el).css({
-							"background-image": "url(img/heart_blue_map.png)",
+							"background-image":
+								"url(../img/heart_blue_map.png)",
 							"z-index": "1",
 						});
 
@@ -152,7 +154,8 @@ function loadmap() {
 						$(".letter-highlight").hide();
 						$(".heart-highlight").remove();
 						$(el).css({
-							"background-image": "url(img/heart_pink_map.png)",
+							"background-image":
+								"url(../img/heart_pink_map.png)",
 							"z-index": "unset",
 						});
 					}
@@ -173,14 +176,16 @@ function loadmap() {
 						$("#letter-text-from").text(marker.from);
 						$(".letter-image").css({
 							"background-image":
-								"url(../letters/" + marker.images[0] + ")",
+								"url(../" + path + marker.thumb + ")",
 						});
 						$(".marker").css({
-							"background-image": "url(img/heart_pink_map.png)",
+							"background-image":
+								"url(../img/heart_pink_map.png)",
 							"z-index": "unset",
 						});
 						$(el).css({
-							"background-image": "url(img/heart_blue_map.png)",
+							"background-image":
+								"url(../img/heart_blue_map.png)",
 							"z-index": "1",
 						});
 
@@ -198,7 +203,8 @@ function loadmap() {
 						$(".letter-highlight#" + marker.id).hide();
 						$(".divLink-highlight").removeAttr("id");
 						$(el).css({
-							"background-image": "url(img/heart_pink_map.png)",
+							"background-image":
+								"url(../img/heart_pink_map.png)",
 							"z-index": "unset",
 						});
 					}
@@ -214,7 +220,7 @@ function loadmap() {
 						) {
 							$(el).css({
 								"background-image":
-									"url(img/heart_blue_map.png)",
+									"url(../img/heart_blue_map.png)",
 								"z-index": "1",
 							});
 						}
@@ -226,7 +232,7 @@ function loadmap() {
 						) {
 							$(el).css({
 								"background-image":
-									"url(img/heart_pink_map.png)",
+									"url(../img/heart_pink_map.png)",
 								"z-index": "unset",
 							});
 						}
