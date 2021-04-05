@@ -18,7 +18,6 @@
 			"rutechaves_4.jpg",
 			"rutechaves_5.jpg"
 		],
-		"thumb": "rutechaves_thumb_1.jpg",
 		"captions": [],
 		"coordinates": [-37.7790556, 144.9577778]
 	},
@@ -29,7 +28,6 @@
 		"from": "The girl from the Eastern Suburbs",
 		"images_small": ["sierraveritybeasley_small_1.jpg"],
 		"images": ["sierraveritybeasley_1.jpg"],
-		"thumb": "sierraveritybeasley_thumb_1.jpg",
 		"captions": [],
 		"coordinates": [-37.7910456306492, 145.0149406436627]
 	},
@@ -43,7 +41,6 @@
 			"amandinethomas_small_2.jpg"
 		],
 		"images": ["amandinethomas_1.jpg", "amandinethomas_2.jpg"],
-		"thumb": "amandinethomas_thumb_1.jpg",
 		"captions": [],
 		"coordinates": [-37.82865310806947, 145.046064640029]
 	},
@@ -68,7 +65,6 @@
 			"tarrynhandcock_5.jpg",
 			"tarrynhandcock_6.jpg"
 		],
-		"thumb": "tarrynhandcock_thumb_1.jpg",
 		"captions": [],
 		"coordinates": [-37.81741479958219, 144.95924227295765]
 	},
@@ -83,7 +79,6 @@
 			"seanryan_small_3.jpg"
 		],
 		"images": ["seanryan_1.jpg", "seanryan_2.jpg", "seanryan_3.jpg"],
-		"thumb": "seanryan_thumb_1.jpg",
 		"captions": [],
 		"coordinates": [-37.81199092768334, 144.9651640607231]
 	},
@@ -94,7 +89,6 @@
 		"from": "Love Alice",
 		"images_small": ["alicelewis_small_1.jpg"],
 		"images": ["alicelewis_1.jpg"],
-		"thumb": "alicelewis_thumb_1.jpg",
 		"captions": [],
 		"coordinates": [-37.81355329951707, 144.963269972722031]
 	},
@@ -105,7 +99,6 @@
 		"from": "Love Ren",
 		"images_small": ["rengregorcic_small_1.jpg"],
 		"images": ["rengregorcic_1.jpg"],
-		"thumb": "rengregorcic_thumb_1.jpg",
 		"captions": [],
 		"coordinates": [-37.8203611, 144.9710278]
 	},
@@ -130,7 +123,6 @@
 			"milliecattlin_5.jpg",
 			"milliecattlin_6.jpg"
 		],
-		"thumb": "milliecattlin_thumb_1.jpg",
 		"captions": [],
 		"coordinates": [-37.82068594759646, 144.9676853730152]
 	},
@@ -141,7 +133,6 @@
 		"from": "Love Michael",
 		"images_small": ["michaelgill_small_1.jpg"],
 		"images": ["michaelgill_1.jpg"],
-		"thumb": "michaelgill_thumb_1.jpg",
 		"captions": [],
 		"coordinates": [-37.772949410066154, 145.03356136617379]
 	},
@@ -152,7 +143,6 @@
 		"from": "Love A.",
 		"images_small": ["alicewhitmore_1.jpg", "alicewhitmore_small_2.jpg"],
 		"images": ["alicewhitmore_1.jpg", "alicewhitmore_2.jpg"],
-		"thumb": "alicewhitmore_thumb_1.jpg",
 		"captions": [],
 		"coordinates": [-37.796310292623, 144.98763385196406]
 	},
@@ -173,7 +163,6 @@
 			"lisacarroll_3.jpg",
 			"lisacarroll_4.jpg"
 		],
-		"thumb": "lisacarroll_thumb_1.jpg",
 		"captions": [],
 		"coordinates": [-35.044592, 142.8825176]
 	},
@@ -184,7 +173,6 @@
 		"from": "With love, from Sara",
 		"images_small": ["sarahdimartino_small_1.jpg"],
 		"images": ["sarahdimartino_1.jpg"],
-		"thumb": "sarahdimartino_thumb_1.jpg",
 		"captions": [],
 		"coordinates": [-37.866752212605135, 144.69415878645972]
 	},
@@ -205,7 +193,6 @@
 			"danicaviolet_3.jpg",
 			"danicaviolet_4.jpg"
 		],
-		"thumb": "danicaviolet_thumb_1.jpg",
 		"captions": [
 			"",
 			"Nighttime in 35mm",
@@ -221,7 +208,6 @@
 		"from": "All my love, Nicole",
 		"images_small": ["nicolerutherford_small_1.jpg"],
 		"images": ["nicolerutherford_1.jpg"],
-		"thumb": "nicolerutherford_thumb_1.jpg",
 		"captions": [],
 		"coordinates": [-34.20665758405628, 142.13633337710723]
 	},
@@ -236,7 +222,6 @@
 			"leannechoi_small_3.jpg"
 		],
 		"images": ["leannechoi_1.jpg", "leannechoi_2.jpg", "leannechoi_3.jpg"],
-		"thumb": "leannechoi_thumb_1.jpg",
 		"captions": [
 			"Addresses 206 Bourke street from memory to explore my identity as a Chinese-Australian",
 			"The 206 Bourke street centre located in Melbourne Chinatown. Focusing on observing the centre prior to refurbishment according to memories",
