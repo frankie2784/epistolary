@@ -109,7 +109,6 @@ function loadImages(element) {
 
 				let selectedImage = $(".lightbox-img#selected");
 				selectedImage.css({
-					display: "unset",
 					height: imgHeight,
 					width: imgWidth,
 					backgroundSize: imgWidth + "px " + imgHeight + "px",

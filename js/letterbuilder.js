@@ -30,10 +30,6 @@ window.addEventListener("resize", function () {
 	stroke.setAttribute("x2", "calc(50vw + 20px)");
 });
 
-function preloadImage(url) {
-	new Image().src = url;
-}
-
 function loadJSON(callback) {
 	var xobj = new XMLHttpRequest();
 	xobj.overrideMimeType("application/json");
@@ -81,12 +77,6 @@ function letterbuilder() {
 			divChild.appendChild(linkChild);
 			divChild.appendChild(fromChild);
 			tree.appendChild(divChild);
-
-			if (window.innerWidth > 768) {
-				preloadImage(path + marker.images[0]);
-			} else {
-				preloadImage(path + marker.images_small[0]);
-			}
 		});
 
 		// create a DOM element for the marker
